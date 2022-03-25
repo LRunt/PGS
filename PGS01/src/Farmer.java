@@ -86,7 +86,7 @@ public class Farmer implements Runnable{
     public void run() {
         //Creating workers
         for(int i = 0; i < parameters.getcWorker(); i++){
-            workers[i] = new Worker("Worker" + (i + 1), this, parameters.gettWorker());
+            workers[i] = new Worker("Worker " + (i + 1), this, parameters.gettWorker());
             System.out.println("Vytvoren delnik " + (i + 1));
             workers[i].start();
         }
