@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Worker extends Thread{
     /** Name of worker*/
     private String name;
@@ -23,11 +25,31 @@ public class Worker extends Thread{
         String actualSource;
         while(farmer.getNumber() < farmer.getData().size()) {
             actualSource = farmer.getSource();
+            int totalTime = 0, sourceLength = actualSource.length();
             for(int i = 0; i < actualSource.length(); i++){
-                System.out.println(name + "Tezi: "  + time + "s");
-                farmer.sleep(this);
+                int miningTime = generateRandomNumber(0, time);
+                totalTime += miningTime;
+                farmer.sleep(this, miningTime);
+                farmer.getPrinter().printAction(name + " Mine one block: "  + miningTime + "s");
             }
+            farmer.getPrinter().printAction(String.format("%s Mine one source (%d blocks) %ds", name, sourceLength, totalTime));
         }
+        farmer.getPrinter().writeToFile("output.txt");
+    }
+
+    /**
+     * Method generate random number
+     * @param min minimal possible number
+     * @param max maximal number
+     * @return random number in range
+     */
+    private int generateRandomNumber(int min, int max){
+        min++;
+        if(min >= max){
+            System.err.println("Error: minimum is bigger or same than maximum!");
+        }
+        Random r = new Random();
+        return min + r.nextInt(max - min);
     }
 
 }

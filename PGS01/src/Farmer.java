@@ -14,7 +14,7 @@ public class Farmer implements Runnable{
     private int numberOfSources;
     /** data*/
     private List<String> data;
-    private Printer printer = new Printer();
+    private Printer printer = new Printer("output.txt");
     private InputParameters parameters;
     private Worker[] workers;
     private int number;
@@ -112,9 +112,9 @@ public class Farmer implements Runnable{
         return null;
     }
 
-    public void sleep(Worker worker){
+    public void sleep(Worker worker, int time){
         try{
-            worker.sleep(50);
+            worker.sleep(time);
         }catch(Exception ex){
             ex.printStackTrace();
         }
@@ -126,5 +126,9 @@ public class Farmer implements Runnable{
 
     public int getNumber() {
         return number;
+    }
+
+    public Printer getPrinter(){
+        return printer;
     }
 }
