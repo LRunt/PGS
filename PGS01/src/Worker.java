@@ -1,4 +1,4 @@
-public class Worker implements Runnable{
+public class Worker extends Thread{
     /** Name of worker*/
     private String name;
     /** A foreman who assigns work*/
@@ -20,7 +20,14 @@ public class Worker implements Runnable{
 
     @Override
     public void run() {
-
+        String actualSource;
+        while(farmer.getNumber() < farmer.getData().size()) {
+            actualSource = farmer.getSource();
+            for(int i = 0; i < actualSource.length(); i++){
+                System.out.println(name + "Tezi: "  + time + "s");
+                farmer.sleep(this);
+            }
+        }
     }
 
 }

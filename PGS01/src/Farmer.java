@@ -1,4 +1,3 @@
-import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -16,7 +15,7 @@ public class Farmer implements Runnable{
     /** data*/
     private List<String> data;
     private Printer printer = new Printer();
-    InputParameters parameters;
+    private InputParameters parameters;
     private Worker[] workers;
     private int number;
 
@@ -29,6 +28,7 @@ public class Farmer implements Runnable{
         this.parameters = parameters;
         numberOfBlocks = 0;
         numberOfSources = 0;
+        number = 0;
         workers = new Worker[parameters.getcWorker()];
         rowList = readFile(inputFile);
         data = prepareData(rowList);
@@ -85,7 +85,8 @@ public class Farmer implements Runnable{
         //Creating workers
         for(int i = 0; i < parameters.getcWorker(); i++){
             workers[i] = new Worker("Worker" + (i + 1), this, parameters.gettWorker());
-            workers[i].run();
+            System.out.println("Vytvoren delnik " + (i + 1));
+            workers[i].start();
         }
 
         //
@@ -97,6 +98,33 @@ public class Farmer implements Runnable{
      */
     public synchronized String getSource(){
         System.out.println("zadam zdroj");
+        String output;
+        try{
+            while(number < data.size()){
+                output = data.get(number);
+                System.out.println("Přidělen zdroj " + (number + 1));
+                number++;
+                return output;
+            }
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
         return null;
+    }
+
+    public void sleep(Worker worker){
+        try{
+            worker.sleep(50);
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }
+    }
+
+    public List<String> getData() {
+        return data;
+    }
+
+    public int getNumber() {
+        return number;
     }
 }
