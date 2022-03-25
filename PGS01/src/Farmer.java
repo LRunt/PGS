@@ -18,6 +18,7 @@ public class Farmer implements Runnable{
     private InputParameters parameters;
     private Worker[] workers;
     private int number;
+    private Lorry actualLorry;
 
     /**
      * Constructor of class {@code Farmer}
@@ -32,6 +33,7 @@ public class Farmer implements Runnable{
         workers = new Worker[parameters.getcWorker()];
         rowList = readFile(inputFile);
         data = prepareData(rowList);
+        createLorry();
     }
 
     /**
@@ -88,8 +90,6 @@ public class Farmer implements Runnable{
             System.out.println("Vytvoren delnik " + (i + 1));
             workers[i].start();
         }
-
-        //
     }
 
     /**
@@ -112,6 +112,15 @@ public class Farmer implements Runnable{
         return null;
     }
 
+    public synchronized void createLorry(){
+        actualLorry = new Lorry(parameters.getCapLorry(), this);
+    }
+
+    /**
+     * Method simulate work of worker
+     * @param worker worker who works
+     * @param time time how long the worker work
+     */
     public void sleep(Worker worker, int time){
         try{
             worker.sleep(time);
@@ -130,5 +139,9 @@ public class Farmer implements Runnable{
 
     public Printer getPrinter(){
         return printer;
+    }
+
+    public Lorry getActualLorry(){
+        return actualLorry;
     }
 }

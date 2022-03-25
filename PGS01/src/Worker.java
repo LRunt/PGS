@@ -26,6 +26,7 @@ public class Worker extends Thread{
         while(farmer.getNumber() < farmer.getData().size()) {
             actualSource = farmer.getSource();
             int totalTime = 0, sourceLength = actualSource.length();
+            //Mining blocks
             for(int i = 0; i < actualSource.length(); i++){
                 int miningTime = generateRandomNumber(0, time);
                 totalTime += miningTime;
@@ -33,6 +34,12 @@ public class Worker extends Thread{
                 farmer.getPrinter().printAction(name + " Mine one block: "  + miningTime + "s");
             }
             farmer.getPrinter().printAction(String.format("%s Mine one source (%d blocks) %ds", name, sourceLength, totalTime));
+            //Transporting blocks
+            farmer.getPrinter().printAction(name  + " Carries " + actualSource.length() + " blocks");
+            //Loading blocks
+            for(int i = 0; i < actualSource.length(); i++) {
+                farmer.getActualLorry().loadCargo(this);
+            }
         }
         farmer.getPrinter().writeToFile("output.txt");
     }
