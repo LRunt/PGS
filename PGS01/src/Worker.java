@@ -1,5 +1,10 @@
 import java.util.Random;
 
+/**
+ * The class {@Worker} represents a worker who mines a block in mine
+ * @author Lukas Runt
+ * @version 1.2 (02-04-2022)
+ */
 public class Worker implements Runnable{
     /** Name of worker*/
     private String name;
@@ -10,9 +15,9 @@ public class Worker implements Runnable{
 
     /**
      * Constructor of class {@code Worker}
-     * @param name
-     * @param farmer
-     * @param time
+     * @param name name of worker
+     * @param farmer the boss of worker
+     * @param time maximal time of mining blocks
      */
     public Worker(String name, Farmer farmer, int time){
         this.name = name;
@@ -20,6 +25,9 @@ public class Worker implements Runnable{
         this.time = time;
     }
 
+    /**
+     * Method simulates worker who mine blocks and loading the excavated material into the lorry
+     */
     @Override
     public void run() {
         String actualSource;
@@ -35,7 +43,7 @@ public class Worker implements Runnable{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                farmer.getPrinter().printAction(name + " Mine one block: "  + miningTime + "s");
+                farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), name + " Mine one block: "  + miningTime + "s");
             }
             farmer.getPrinter().printAction(String.format("%s Mine one source (%d blocks) %ds", name, sourceLength, totalTime));
             //Transporting blocks

@@ -1,17 +1,27 @@
 import java.io.BufferedWriter;
-import java.io.File;
 import java.io.FileWriter;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class {@code Printer} represents a printer who prints to the console and to the file
+ * @author Lukas Runt
+ * @version 1.1 (02-04-2022)
+ */
 public class Printer {
-
+    /** Time stamp format*/
     DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss.SSS");;
+    /** Local date*/
     private LocalDateTime now;
+    /** Name of output file*/
     private String fileName;
+    /** Text which will be printed into the file*/
     private String output;
 
-
+    /**
+     * Constructor of class {@Printer}
+     * @param fileName name of output file
+     */
     public Printer(String fileName){
         now = LocalDateTime.now();
         this.fileName = fileName;
@@ -19,9 +29,27 @@ public class Printer {
         output = "";
     }
 
-    public void printAction(String describtion){
+    /**
+     * Method prints action
+     * @param description
+     */
+    public void printAction(String description){
         now = LocalDateTime.now();
-        String out = String.format("<%s><%s>\n", dtf.format(now), describtion);
+        String out = String.format("<%s><%s>\n", dtf.format(now), description);
+        System.out.printf(out);
+        output += out;
+        if(output.length() > 10000) writeToFile(fileName);
+    }
+
+    /**
+     * Method prints action into the console and file
+     * @param role the role of the entity that announces the action
+     * @param thread name of thread
+     * @param description description of action
+     */
+    public void printAction(String role, String thread, String description){
+        now = LocalDateTime.now();
+        String out = String.format("<%s><%s><%s><%s>\n", dtf.format(now),role, thread, description);
         System.out.printf(out);
         output += out;
         if(output.length() > 10000) writeToFile(fileName);
@@ -29,7 +57,7 @@ public class Printer {
 
     /**
      * Method create new empty file
-     * @param fileName
+     * @param fileName name of file what will be created
      */
     public void createNewFile(String fileName){
         try{
@@ -42,6 +70,10 @@ public class Printer {
         }
     }
 
+    /**
+     * Method writes actions to the file
+     * @param fileName name of output file
+     */
     public synchronized void writeToFile(String fileName){
         try{
             BufferedWriter bw = new BufferedWriter(

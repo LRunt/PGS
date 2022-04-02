@@ -1,3 +1,8 @@
+/**
+ * Class {@Ferry} represents ferry who takes lorrys to the other side of the river
+ * @author Lukas Runt
+ * @version 1.0 (02-04-2022)
+ */
 public class Ferry {
     /** Capacity of ferry*/
     private int capFerry;

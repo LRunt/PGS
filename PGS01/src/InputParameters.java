@@ -1,3 +1,8 @@
+/**
+ * Class {@code InputParamaters} represents parameters that were entered when the application was executed
+ * @author Lukas Runt
+ * @version 1.0 (14-03-2022)
+ */
 public class InputParameters {
     /** Path to the input file*/
     private String inputFile;
@@ -34,61 +39,60 @@ public class InputParameters {
         this.capFerry = capFerry;
     }
 
+    /**
+     * Getter of input file
+     * @return name of input file
+     */
     public String getInputFile() {
         return inputFile;
     }
 
-    public void setInputFile(String inputFile) {
-        this.inputFile = inputFile;
-    }
-
+    /**
+     * Getter of output file
+     * @return name of output file
+     */
     public String getOutputFile() {
         return outputFile;
     }
 
-    public void setOutputFile(String outputFile) {
-        this.outputFile = outputFile;
-    }
-
+    /**
+     * Getter of cWorker
+     * @return number of workers
+     */
     public int getcWorker() {
         return cWorker;
     }
 
-    public void setcWorker(int cWorker) {
-        this.cWorker = cWorker;
-    }
-
+    /**
+     * Getter of tWorker
+     * @return maximum time of mining
+     */
     public int gettWorker() {
         return tWorker;
     }
 
-    public void settWorker(int tWorker) {
-        this.tWorker = tWorker;
-    }
-
+    /**
+     * Getter of capLorry
+     * @return the capacity of lorry
+     */
     public int getCapLorry() {
         return capLorry;
     }
 
-    public void setCapLorry(int capLorry) {
-        this.capLorry = capLorry;
-    }
-
+    /**
+     * Getter of tLorry
+     * @return transport time of lorry
+     */
     public int gettLorry() {
         return tLorry;
     }
 
-    public void settLorry(int tLorry) {
-        this.tLorry = tLorry;
-    }
-
+    /**
+     * Getter of capFerry
+     * @return capacity of ferry
+     */
     public int getCapFerry() {
         return capFerry;
     }
-
-    public void setCapFerry(int capFerry) {
-        this.capFerry = capFerry;
-    }
-
 
 }
