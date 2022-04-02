@@ -35,7 +35,7 @@ public class Worker implements Runnable{
             actualSource = farmer.getSource();
             int totalTime = 0, sourceLength = actualSource.length();
             //Mining blocks
-            for(int i = 0; i < actualSource.length(); i++){
+            for (int i = 0; i < actualSource.length(); i++) {
                 int miningTime = generateRandomNumber(0, time);
                 totalTime += miningTime;
                 try {
@@ -43,17 +43,16 @@ public class Worker implements Runnable{
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), name + " Mine one block: "  + miningTime + "s");
+                farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), name + " Mine one block: " + miningTime + "ms");
             }
-            farmer.getPrinter().printAction(String.format("%s Mine one source (%d blocks) %ds", name, sourceLength, totalTime));
+            farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), String.format("%s Mine one source (%d blocks) %dms", name, sourceLength, totalTime));
             //Transporting blocks
-            farmer.getPrinter().printAction(name  + " Carries " + actualSource.length() + " blocks");
+            farmer.getPrinter().printAction(name + " Carries " + actualSource.length() + " blocks");
             //Loading blocks
-            for(int i = 0; i < actualSource.length(); i++) {
+            for (int i = 0; i < actualSource.length(); i++) {
                 farmer.getActualLorry().loadCargo(this);
             }
         }
-        farmer.getPrinter().writeToFile("output.txt");
     }
 
     /**

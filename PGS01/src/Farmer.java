@@ -31,6 +31,8 @@ public class Farmer implements Runnable{
     private Lorry actualLorry;
     /** Ferry which transport lorrys to the other side of river*/
     private Ferry dominik;
+    /** Name of farmer*/
+    private String name = "Farmer 1";
 
     /**
      * Constructor of class {@code Farmer}
@@ -46,7 +48,7 @@ public class Farmer implements Runnable{
         rowList = readFile(inputFile);
         data = prepareData(rowList);
         actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
-        dominik = new Ferry(parameters.getCapFerry());
+        dominik = new Ferry(parameters.getCapFerry(), this);
     }
 
     /**
@@ -95,8 +97,8 @@ public class Farmer implements Runnable{
         printer.printAction("Capacity of one lorry: " + parameters.getCapLorry());
         printer.printAction("Lorry driving time: " + parameters.gettLorry());
         printer.printAction("Capacity of ferry: " + parameters.getCapFerry());
-        printer.printAction("Number of sources: " + numberOfSources);
-        printer.printAction("Number od blocks: " + numberOfBlocks);
+        printer.printAction(this.name, Thread.currentThread().getName(), "Number of sources: " + numberOfSources);
+        printer.printAction(this.name, Thread.currentThread().getName(), "Number od blocks: " + numberOfBlocks);
     }
 
     /**
@@ -106,9 +108,9 @@ public class Farmer implements Runnable{
     public void run() {
         //Creating workers
         for(int i = 0; i < parameters.getcWorker(); i++){
-            Worker newWorker = new Worker("Worker" + (i + 1), this, parameters.gettWorker());
+            Worker newWorker = new Worker("Worker " + (i + 1), this, parameters.gettWorker());
             workers[i] = new Thread(newWorker);
-            System.out.println("Vytvoren delnik " + (i + 1));
+            System.out.println("Worker " + (i + 1) + " was created.");
             workers[i].start();
         }
 
@@ -121,6 +123,12 @@ public class Farmer implements Runnable{
             }
         }
 
+        //Sending the last lorry
+        if(actualLorry.getLoad() > 0){
+            sendLorry();
+        }
+
+        printer.writeToFile("output.txt");
     }
 
     /**
@@ -128,12 +136,12 @@ public class Farmer implements Runnable{
      * @return the source of blocks in the mine
      */
     public synchronized String getSource(){
-        System.out.println("zadam zdroj");
+        //System.out.println("zadam zdroj");
         String output;
         try{
             while(number < data.size()){
                 output = data.get(number);
-                System.out.println("Přidělen zdroj " + (number + 1));
+                //System.out.println("Přidělen zdroj " + (number + 1));
                 number++;
                 return output;
             }

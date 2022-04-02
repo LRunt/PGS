@@ -10,15 +10,23 @@ public class Ferry {
     private int lorryOnBoard;
     /** Indicates whether the ferry is waiting */
     private boolean wait = true;
-
+    /** A boss who controls everything*/
+    private Farmer farmer;
+    /** Time when was ferry empty*/
+    private long start;
+    /** Number of ferry*/
+    private int numberOfFerry;
 
     /**
      * Constuctor of class {@Ferry}
      * @param capFerry capacity of ferry
      */
-    public Ferry(int capFerry){
+    public Ferry(int capFerry, Farmer farmer){
         this.capFerry = capFerry;
         lorryOnBoard = 0;
+        this.farmer = farmer;
+        start = System.currentTimeMillis();
+        numberOfFerry = 0;
     }
 
     /**
@@ -27,14 +35,14 @@ public class Ferry {
      */
     public synchronized void transportLorry(Lorry lorry){
         while(!wait){
-            lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az ostatni vlakna opusti barieru");
+            //lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az ostatni vlakna opusti barieru");
             try{
                 wait();
             }catch(InterruptedException ex){
                 ex.printStackTrace();
             }
             if(!wait){
-                System.err.println("Vlakno bylo samovolne probuzeno");
+                System.err.println("The thread was spontaneously awakened");
             }
         }
         lorryOnBoard++;
@@ -43,21 +51,24 @@ public class Ferry {
             notifyAll();
         }
         while(wait){
-            lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az privoz naplni");
+            //lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az privoz naplni");
             try{
                 wait();
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
             if(wait){
-                System.err.println("Vlakno bylo samovolne probuzeno");
+                System.err.println("The thread was spontaneously awakened");
             }
         }
         lorryOnBoard--;
         if(lorryOnBoard == 0){
             wait = true;
-            System.out.println("Vlakno" + lorry.getName()+ " probouzi ostatni vlakna, predchozi inkarnaci bariery opustila vsechna vlakna.");
+            farmer.getPrinter().printAction("Ferry " + numberOfFerry, Thread.currentThread().getName(), "The ferry has started. It was waiting to be filled for: " + (System.currentTimeMillis() - start) + "ms");
+            //System.out.println("Vlakno" + lorry.getName()+ " probouzi ostatni vlakna, predchozi inkarnaci bariery opustila vsechna vlakna.");
             notifyAll();
+            start = System.currentTimeMillis();
+            numberOfFerry++;
         }
     }
 }

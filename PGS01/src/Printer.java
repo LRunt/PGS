@@ -74,7 +74,7 @@ public class Printer {
      * Method writes actions to the file
      * @param fileName name of output file
      */
-    public synchronized void writeToFile(String fileName){
+    public void writeToFile(String fileName){
         try{
             BufferedWriter bw = new BufferedWriter(
                     new FileWriter(fileName, true));

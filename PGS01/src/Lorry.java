@@ -15,8 +15,14 @@ public class Lorry implements Runnable{
     private Farmer farmer;
     /** Name of lorry*/
     private String name;
+    /** Time of start of loading*/
+    private long loadingStart;
+    /** Time of end of loading*/
+    private long loadingEnd;
     /** Number of existing lorrys*/
     private static int number = 0;
+    /** Loading time of one block*/
+    private final int LOADING_TIME = 10;
 
     /**
      * Constructor of {@code Lorry}
@@ -31,6 +37,7 @@ public class Lorry implements Runnable{
         number++;
         name = "Lorry " + number;
         this.tLorry = tLorry;
+        this.loadingStart = System.currentTimeMillis();
     }
 
     /**
@@ -39,11 +46,18 @@ public class Lorry implements Runnable{
      */
     public synchronized void loadCargo(Worker worker){
         if(load < capLorry){
-            farmer.getPrinter().printAction( name + " Prazdno - Aktualni naplneni: " + load + " ze " + capLorry);
+            //farmer.getPrinter().printAction( name + " Prazdno - Aktualni naplneni: " + load + " ze " + capLorry);
+            //long startLoading = System.currentTimeMillis();
+            //while(System.currentTimeMillis() - startLoading < LOADING_TIME){}
+            /*try{
+                Thread.sleep(LOADING_TIME);
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }*/
             load++;
-            farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
+            //farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
         }else{
-            farmer.getPrinter().printAction("Plno");
+            //farmer.getPrinter().printAction("Plno");
             farmer.sendLorry();
             farmer.getActualLorry().loadCargo(worker);
         }
@@ -54,21 +68,26 @@ public class Lorry implements Runnable{
      */
     @Override
     public void run() {
-        System.out.println("Lorry vyrazi");
+        loadingEnd = System.currentTimeMillis();
+        //System.out.println("Lorry vyrazi");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry is filled and heading for the ferry, Loading time: " + (loadingEnd - loadingStart) + "ms");
         try {
             Thread.sleep(tLorry);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Lorry dorazi na Ferry");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The truck has arrived at the ferry, Time of travel: " + tLorry + "ms");
         farmer.getDominik().transportLorry(this);
-        System.out.println("Lorry byl prevezen");
+        //System.out.println("Lorry byl prevezen");
         try {
             Thread.sleep(tLorry);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("Lorry dojel na misto urceni");
+        //System.out.println("Lorry dojel na misto urceni");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry arrived at its destination, Travel time from ferry: " + tLorry + "ms");
+
+        farmer.getPrinter().writeToFile("output.txt");
     }
 
     /**
@@ -87,5 +106,11 @@ public class Lorry implements Runnable{
         return farmer;
     }
 
-
+    /**
+     * Getter of load
+     * @return actual load of lorry
+     */
+    public int getLoad() {
+        return load;
+    }
 }
