@@ -16,7 +16,7 @@ public class Farmer implements Runnable{
     private List<String> data;
     private Printer printer = new Printer("output.txt");
     private InputParameters parameters;
-    private Worker[] workers;
+    private Thread[] workers;
     private int number;
     private Lorry actualLorry;
 
@@ -30,7 +30,7 @@ public class Farmer implements Runnable{
         numberOfBlocks = 0;
         numberOfSources = 0;
         number = 0;
-        workers = new Worker[parameters.getcWorker()];
+        workers = new Thread[parameters.getcWorker()];
         rowList = readFile(inputFile);
         data = prepareData(rowList);
         createLorry();
@@ -86,7 +86,8 @@ public class Farmer implements Runnable{
     public void run() {
         //Creating workers
         for(int i = 0; i < parameters.getcWorker(); i++){
-            workers[i] = new Worker("Worker" + (i + 1), this, parameters.gettWorker());
+            Worker newWorker = new Worker("Worker" + (i + 1), this, parameters.gettWorker());
+            workers[i] = new Thread(newWorker);
             System.out.println("Vytvoren delnik " + (i + 1));
             workers[i].start();
         }
@@ -114,19 +115,6 @@ public class Farmer implements Runnable{
 
     public synchronized void createLorry(){
         actualLorry = new Lorry(parameters.getCapLorry(), this);
-    }
-
-    /**
-     * Method simulate work of worker
-     * @param worker worker who works
-     * @param time time how long the worker work
-     */
-    public void sleep(Worker worker, int time){
-        try{
-            worker.sleep(time);
-        }catch(Exception ex){
-            ex.printStackTrace();
-        }
     }
 
     public List<String> getData() {

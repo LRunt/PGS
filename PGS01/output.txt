@@ -1,0 +1,446 @@
+<02/04/2022 13:05:29.619><Starting simulation>
+<02/04/2022 13:05:29.666><Input file: test.txt>
+<02/04/2022 13:05:29.667><Output file: output.txt>
+<02/04/2022 13:05:29.667><Number of workers: 4>
+<02/04/2022 13:05:29.670><Time of digging block: 50>
+<02/04/2022 13:05:29.671><Capacity of one lorry: 10>
+<02/04/2022 13:05:29.672><Lorry driving time: 1000>
+<02/04/2022 13:05:29.676><Capacity of ferry: 4>
+<02/04/2022 13:05:29.677><Number of sources: 56>
+<02/04/2022 13:05:29.679><Number od blocks: 155>
+<02/04/2022 13:05:29.700><Worker2 Mine one block: 5s>
+<02/04/2022 13:05:29.701><Worker1 Mine one block: 13s>
+<02/04/2022 13:05:29.701><Worker4 Mine one block: 5s>
+<02/04/2022 13:05:29.701><Worker4 Mine one source (1 blocks) 5s>
+<02/04/2022 13:05:29.702><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:29.702><Worker3 Mine one block: 4s>
+<02/04/2022 13:05:29.702><Worker3 Mine one source (1 blocks) 4s>
+<02/04/2022 13:05:29.703><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:29.716><Lorry 1 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:29.716><Lorry 1 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:29.732><Worker4 Mine one block: 15s>
+<02/04/2022 13:05:29.732><Worker4 Mine one source (1 blocks) 15s>
+<02/04/2022 13:05:29.732><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:29.732><Lorry 1 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:29.736><Worker1 Mine one block: 34s>
+<02/04/2022 13:05:29.736><Worker2 Mine one block: 34s>
+<02/04/2022 13:05:29.743><Worker2 Mine one block: 6s>
+<02/04/2022 13:05:29.744><Worker2 Mine one source (3 blocks) 45s>
+<02/04/2022 13:05:29.745><Worker2 Carries 3 blocks>
+<02/04/2022 13:05:29.745><Lorry 1 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:29.747><Lorry 1 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:29.747><Lorry 1 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:29.750><Worker3 Mine one block: 32s>
+<02/04/2022 13:05:29.758><Worker1 Mine one block: 21s>
+<02/04/2022 13:05:29.762><Worker1 Mine one source (3 blocks) 68s>
+<02/04/2022 13:05:29.762><Worker2 Mine one block: 13s>
+<02/04/2022 13:05:29.762><Worker1 Carries 3 blocks>
+<02/04/2022 13:05:29.762><Lorry 1 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:29.762><Lorry 1 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:29.763><Lorry 1 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:29.788><Worker4 Mine one block: 49s>
+<02/04/2022 13:05:29.787><Worker3 Mine one block: 29s>
+<02/04/2022 13:05:29.788><Worker4 Mine one source (1 blocks) 49s>
+<02/04/2022 13:05:29.789><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:29.789><Lorry 1 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:29.789><Worker1 Mine one block: 21s>
+<02/04/2022 13:05:29.789><Worker2 Mine one block: 24s>
+<02/04/2022 13:05:29.789><Worker1 Mine one source (1 blocks) 21s>
+<02/04/2022 13:05:29.790><Worker1 Carries 1 blocks>
+<02/04/2022 13:05:29.790><Plno>
+<02/04/2022 13:05:29.790><Lorry 2 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:29.819><Worker3 Mine one block: 30s>
+<02/04/2022 13:05:29.828><Worker1 Mine one block: 36s>
+<02/04/2022 13:05:29.832><Worker2 Mine one block: 41s>
+<02/04/2022 13:05:29.832><Worker2 Mine one source (3 blocks) 78s>
+<02/04/2022 13:05:29.832><Worker2 Carries 3 blocks>
+<02/04/2022 13:05:29.832><Lorry 2 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:29.833><Lorry 2 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:29.833><Lorry 2 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:29.833><Worker4 Mine one block: 43s>
+<02/04/2022 13:05:29.833><Worker4 Mine one source (1 blocks) 43s>
+<02/04/2022 13:05:29.833><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:29.833><Lorry 2 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:29.837><Worker4 Mine one block: 2s>
+<02/04/2022 13:05:29.847><Worker1 Mine one block: 18s>
+<02/04/2022 13:05:29.855><Worker1 Mine one block: 7s>
+<02/04/2022 13:05:29.860><Worker3 Mine one block: 40s>
+<02/04/2022 13:05:29.862><Worker3 Mine one block: 1s>
+<02/04/2022 13:05:29.862><Worker3 Mine one source (5 blocks) 132s>
+<02/04/2022 13:05:29.863><Worker3 Carries 5 blocks>
+<02/04/2022 13:05:29.864><Lorry 2 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:29.864><Worker2 Mine one block: 30s>
+<02/04/2022 13:05:29.864><Lorry 2 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:29.864><Lorry 2 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:29.864><Lorry 2 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:29.864><Lorry 2 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:29.873><Worker4 Mine one block: 35s>
+<02/04/2022 13:05:29.893><Worker1 Mine one block: 37s>
+<02/04/2022 13:05:29.893><Worker1 Mine one source (4 blocks) 98s>
+<02/04/2022 13:05:29.893><Worker1 Carries 4 blocks>
+<02/04/2022 13:05:29.894><Plno>
+<02/04/2022 13:05:29.895><Lorry 3 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:29.895><Lorry 3 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:29.896><Lorry 3 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:29.897><Lorry 3 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:29.898><Worker2 Mine one block: 33s>
+<02/04/2022 13:05:29.907><Worker3 Mine one block: 41s>
+<02/04/2022 13:05:29.907><Worker3 Mine one source (1 blocks) 41s>
+<02/04/2022 13:05:29.907><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:29.908><Lorry 3 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:29.917><Worker4 Mine one block: 43s>
+<02/04/2022 13:05:29.917><Worker4 Mine one source (3 blocks) 80s>
+<02/04/2022 13:05:29.917><Worker4 Carries 3 blocks>
+<02/04/2022 13:05:29.918><Lorry 3 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:29.919><Lorry 3 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:29.919><Lorry 3 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:29.928><Worker1 Mine one block: 29s>
+<02/04/2022 13:05:29.928><Worker1 Mine one source (1 blocks) 29s>
+<02/04/2022 13:05:29.928><Worker1 Carries 1 blocks>
+<02/04/2022 13:05:29.928><Lorry 3 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:29.944><Worker3 Mine one block: 35s>
+<02/04/2022 13:05:29.945><Worker2 Mine one block: 45s>
+<02/04/2022 13:05:29.945><Worker2 Mine one source (3 blocks) 108s>
+<02/04/2022 13:05:29.945><Worker2 Carries 3 blocks>
+<02/04/2022 13:05:29.945><Lorry 3 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:29.945><Plno>
+<02/04/2022 13:05:29.945><Lorry 4 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:29.946><Lorry 4 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:29.949><Worker4 Mine one block: 27s>
+<02/04/2022 13:05:29.953><Worker1 Mine one block: 24s>
+<02/04/2022 13:05:29.960><Worker1 Mine one block: 6s>
+<02/04/2022 13:05:29.970><Worker1 Mine one block: 9s>
+<02/04/2022 13:05:29.975><Worker4 Mine one block: 26s>
+<02/04/2022 13:05:29.982><Worker3 Mine one block: 38s>
+<02/04/2022 13:05:29.986><Worker2 Mine one block: 40s>
+<02/04/2022 13:05:30.001><Worker3 Mine one block: 18s>
+<02/04/2022 13:05:30.001><Worker3 Mine one source (3 blocks) 91s>
+<02/04/2022 13:05:30.001><Worker3 Carries 3 blocks>
+<02/04/2022 13:05:30.001><Lorry 4 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.001><Lorry 4 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.001><Lorry 4 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.011><Worker1 Mine one block: 39s>
+<02/04/2022 13:05:30.011><Worker1 Mine one source (4 blocks) 78s>
+<02/04/2022 13:05:30.011><Worker1 Carries 4 blocks>
+<02/04/2022 13:05:30.011><Lorry 4 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.012><Lorry 4 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.012><Lorry 4 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.012><Lorry 4 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.022><Worker2 Mine one block: 35s>
+<02/04/2022 13:05:30.026><Worker4 Mine one block: 49s>
+<02/04/2022 13:05:30.033><Worker3 Mine one block: 31s>
+<02/04/2022 13:05:30.050><Worker4 Mine one block: 23s>
+<02/04/2022 13:05:30.056><Worker4 Mine one block: 5s>
+<02/04/2022 13:05:30.056><Worker4 Mine one source (5 blocks) 130s>
+<02/04/2022 13:05:30.056><Worker4 Carries 5 blocks>
+<02/04/2022 13:05:30.056><Lorry 4 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.056><Plno>
+<02/04/2022 13:05:30.056><Lorry 5 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.056><Lorry 5 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.057><Lorry 5 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.057><Lorry 5 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.059><Worker1 Mine one block: 46s>
+<02/04/2022 13:05:30.062><Worker4 Mine one block: 4s>
+<02/04/2022 13:05:30.066><Worker2 Mine one block: 43s>
+<02/04/2022 13:05:30.066><Worker2 Mine one source (3 blocks) 118s>
+<02/04/2022 13:05:30.066><Worker2 Carries 3 blocks>
+<02/04/2022 13:05:30.066><Lorry 5 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.067><Lorry 5 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.067><Lorry 5 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.081><Worker3 Mine one block: 47s>
+<02/04/2022 13:05:30.104><Worker4 Mine one block: 41s>
+<02/04/2022 13:05:30.105><Worker2 Mine one block: 37s>
+<02/04/2022 13:05:30.108><Worker1 Mine one block: 48s>
+<02/04/2022 13:05:30.118><Worker3 Mine one block: 36s>
+<02/04/2022 13:05:30.118><Worker3 Mine one source (3 blocks) 114s>
+<02/04/2022 13:05:30.118><Worker3 Carries 3 blocks>
+<02/04/2022 13:05:30.118><Lorry 5 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.118><Lorry 5 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.119><Lorry 5 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.126><Worker2 Mine one block: 20s>
+<02/04/2022 13:05:30.132><Worker4 Mine one block: 27s>
+<02/04/2022 13:05:30.137><Worker1 Mine one block: 28s>
+<02/04/2022 13:05:30.151><Worker3 Mine one block: 31s>
+<02/04/2022 13:05:30.151><Worker3 Mine one source (1 blocks) 31s>
+<02/04/2022 13:05:30.151><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:30.151><Plno>
+<02/04/2022 13:05:30.151><Lorry 6 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.155><Worker4 Mine one block: 22s>
+<02/04/2022 13:05:30.155><Worker4 Mine one source (4 blocks) 94s>
+<02/04/2022 13:05:30.155><Worker4 Carries 4 blocks>
+<02/04/2022 13:05:30.155><Lorry 6 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.156><Lorry 6 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.156><Lorry 6 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.156><Lorry 6 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.169><Worker2 Mine one block: 42s>
+<02/04/2022 13:05:30.180><Worker1 Mine one block: 42s>
+<02/04/2022 13:05:30.194><Worker4 Mine one block: 37s>
+<02/04/2022 13:05:30.197><Worker3 Mine one block: 44s>
+<02/04/2022 13:05:30.197><Worker3 Mine one source (1 blocks) 44s>
+<02/04/2022 13:05:30.197><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:30.197><Lorry 6 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.199><Worker4 Mine one block: 5s>
+<02/04/2022 13:05:30.199><Worker4 Mine one source (2 blocks) 42s>
+<02/04/2022 13:05:30.201><Worker4 Carries 2 blocks>
+<02/04/2022 13:05:30.201><Lorry 6 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.201><Worker1 Mine one block: 20s>
+<02/04/2022 13:05:30.201><Lorry 6 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.211><Worker2 Mine one block: 41s>
+<02/04/2022 13:05:30.211><Worker2 Mine one source (4 blocks) 140s>
+<02/04/2022 13:05:30.211><Worker2 Carries 4 blocks>
+<02/04/2022 13:05:30.211><Lorry 6 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.211><Lorry 6 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.211><Plno>
+<02/04/2022 13:05:30.211><Lorry 7 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.212><Lorry 7 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.230><Worker3 Mine one block: 31s>
+<02/04/2022 13:05:30.230><Worker2 Mine one block: 17s>
+<02/04/2022 13:05:30.237><Worker4 Mine one block: 35s>
+<02/04/2022 13:05:30.248><Worker4 Mine one block: 10s>
+<02/04/2022 13:05:30.249><Worker1 Mine one block: 47s>
+<02/04/2022 13:05:30.249><Worker1 Mine one source (6 blocks) 231s>
+<02/04/2022 13:05:30.249><Worker1 Carries 6 blocks>
+<02/04/2022 13:05:30.249><Lorry 7 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.250><Lorry 7 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.250><Lorry 7 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.250><Lorry 7 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.250><Lorry 7 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.250><Lorry 7 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.260><Worker2 Mine one block: 29s>
+<02/04/2022 13:05:30.266><Worker3 Mine one block: 34s>
+<02/04/2022 13:05:30.267><Worker2 Mine one block: 4s>
+<02/04/2022 13:05:30.267><Worker2 Mine one source (3 blocks) 50s>
+<02/04/2022 13:05:30.267><Worker2 Carries 3 blocks>
+<02/04/2022 13:05:30.268><Lorry 7 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.268><Lorry 7 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.268><Plno>
+<02/04/2022 13:05:30.269><Lorry 8 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.283><Worker1 Mine one block: 31s>
+<02/04/2022 13:05:30.354><Worker4 Mine one block: 48s>
+<02/04/2022 13:05:30.355><Worker4 Mine one source (3 blocks) 93s>
+<02/04/2022 13:05:30.355><Worker4 Carries 3 blocks>
+<02/04/2022 13:05:30.355><Lorry 8 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.358><Lorry 8 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.358><Lorry 8 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.365><Worker3 Mine one block: 35s>
+<02/04/2022 13:05:30.368><Worker2 Mine one block: 44s>
+<02/04/2022 13:05:30.371><Worker1 Mine one block: 44s>
+<02/04/2022 13:05:30.377><Worker4 Mine one block: 17s>
+<02/04/2022 13:05:30.377><Worker4 Mine one source (1 blocks) 17s>
+<02/04/2022 13:05:30.386><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:30.386><Lorry 8 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.389><Worker4 Mine one block: 2s>
+<02/04/2022 13:05:30.410><Worker3 Mine one block: 39s>
+<02/04/2022 13:05:30.411><Worker3 Mine one source (4 blocks) 139s>
+<02/04/2022 13:05:30.411><Worker3 Carries 4 blocks>
+<02/04/2022 13:05:30.411><Lorry 8 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.411><Lorry 8 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.411><Lorry 8 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.428><Lorry 8 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.430><Worker2 Mine one block: 39s>
+<02/04/2022 13:05:30.431><Worker2 Mine one source (2 blocks) 83s>
+<02/04/2022 13:05:30.431><Worker2 Carries 2 blocks>
+<02/04/2022 13:05:30.431><Lorry 8 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.431><Plno>
+<02/04/2022 13:05:30.431><Lorry 9 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.432><Worker1 Mine one block: 39s>
+<02/04/2022 13:05:30.432><Worker4 Mine one block: 29s>
+<02/04/2022 13:05:30.435><Worker1 Mine one block: 1s>
+<02/04/2022 13:05:30.435><Worker1 Mine one source (4 blocks) 115s>
+<02/04/2022 13:05:30.435><Worker1 Carries 4 blocks>
+<02/04/2022 13:05:30.435><Lorry 9 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.435><Lorry 9 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.436><Lorry 9 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.436><Lorry 9 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.453><Worker4 Mine one block: 12s>
+<02/04/2022 13:05:30.458><Worker3 Mine one block: 18s>
+<02/04/2022 13:05:30.474><Worker2 Mine one block: 33s>
+<02/04/2022 13:05:30.477><Worker1 Mine one block: 40s>
+<02/04/2022 13:05:30.482><Worker3 Mine one block: 13s>
+<02/04/2022 13:05:30.482><Worker3 Mine one source (2 blocks) 31s>
+<02/04/2022 13:05:30.482><Worker3 Carries 2 blocks>
+<02/04/2022 13:05:30.486><Lorry 9 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.487><Lorry 9 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.505><Worker4 Mine one block: 44s>
+<02/04/2022 13:05:30.505><Worker4 Mine one source (4 blocks) 87s>
+<02/04/2022 13:05:30.506><Worker4 Carries 4 blocks>
+<02/04/2022 13:05:30.506><Lorry 9 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.506><Lorry 9 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.506><Lorry 9 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.506><Plno>
+<02/04/2022 13:05:30.507><Lorry 10 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.508><Worker2 Mine one block: 31s>
+<02/04/2022 13:05:30.523><Worker1 Mine one block: 33s>
+<02/04/2022 13:05:30.524><Worker4 Mine one block: 13s>
+<02/04/2022 13:05:30.524><Worker4 Mine one source (1 blocks) 13s>
+<02/04/2022 13:05:30.524><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:30.524><Lorry 10 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.535><Worker3 Mine one block: 46s>
+<02/04/2022 13:05:30.544><Worker2 Mine one block: 34s>
+<02/04/2022 13:05:30.551><Worker3 Mine one block: 9s>
+<02/04/2022 13:05:30.551><Worker3 Mine one source (2 blocks) 55s>
+<02/04/2022 13:05:30.551><Worker3 Carries 2 blocks>
+<02/04/2022 13:05:30.552><Lorry 10 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.552><Lorry 10 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.558><Worker1 Mine one block: 35s>
+<02/04/2022 13:05:30.558><Worker2 Mine one block: 13s>
+<02/04/2022 13:05:30.575><Worker4 Mine one block: 49s>
+<02/04/2022 13:05:30.575><Worker4 Mine one source (1 blocks) 49s>
+<02/04/2022 13:05:30.575><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:30.576><Lorry 10 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.589><Worker1 Mine one block: 29s>
+<02/04/2022 13:05:30.589><Worker1 Mine one source (4 blocks) 137s>
+<02/04/2022 13:05:30.589><Worker1 Carries 4 blocks>
+<02/04/2022 13:05:30.589><Lorry 10 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.589><Lorry 10 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.589><Lorry 10 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.589><Lorry 10 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.591><Worker3 Mine one block: 38s>
+<02/04/2022 13:05:30.591><Worker3 Mine one source (1 blocks) 38s>
+<02/04/2022 13:05:30.591><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:30.591><Lorry 10 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.600><Worker4 Mine one block: 23s>
+<02/04/2022 13:05:30.600><Worker4 Mine one source (1 blocks) 23s>
+<02/04/2022 13:05:30.600><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:30.600><Plno>
+<02/04/2022 13:05:30.600><Lorry 11 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.603><Worker1 Mine one block: 10s>
+<02/04/2022 13:05:30.603><Worker1 Mine one source (1 blocks) 10s>
+<02/04/2022 13:05:30.603><Worker1 Carries 1 blocks>
+<02/04/2022 13:05:30.603><Lorry 11 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.603><Worker2 Mine one block: 44s>
+<02/04/2022 13:05:30.615><Worker4 Mine one block: 15s>
+<02/04/2022 13:05:30.615><Worker4 Mine one source (1 blocks) 15s>
+<02/04/2022 13:05:30.615><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:30.615><Lorry 11 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.630><Worker3 Mine one block: 39s>
+<02/04/2022 13:05:30.640><Worker3 Mine one block: 9s>
+<02/04/2022 13:05:30.643><Worker1 Mine one block: 40s>
+<02/04/2022 13:05:30.650><Worker2 Mine one block: 46s>
+<02/04/2022 13:05:30.651><Worker4 Mine one block: 34s>
+<02/04/2022 13:05:30.661><Worker4 Mine one block: 9s>
+<02/04/2022 13:05:30.662><Worker3 Mine one block: 21s>
+<02/04/2022 13:05:30.662><Worker3 Mine one source (3 blocks) 69s>
+<02/04/2022 13:05:30.663><Worker3 Carries 3 blocks>
+<02/04/2022 13:05:30.663><Lorry 11 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.663><Lorry 11 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.663><Lorry 11 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.666><Worker2 Mine one block: 14s>
+<02/04/2022 13:05:30.675><Worker4 Mine one block: 13s>
+<02/04/2022 13:05:30.675><Worker4 Mine one source (3 blocks) 56s>
+<02/04/2022 13:05:30.675><Worker4 Carries 3 blocks>
+<02/04/2022 13:05:30.683><Lorry 11 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.683><Lorry 11 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.684><Lorry 11 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.684><Worker3 Mine one block: 17s>
+<02/04/2022 13:05:30.686><Worker1 Mine one block: 42s>
+<02/04/2022 13:05:30.695><Worker2 Mine one block: 11s>
+<02/04/2022 13:05:30.701><Worker4 Mine one block: 10s>
+<02/04/2022 13:05:30.704><Worker4 Mine one source (1 blocks) 10s>
+<02/04/2022 13:05:30.704><Worker4 Carries 1 blocks>
+<02/04/2022 13:05:30.704><Lorry 11 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.705><Worker1 Mine one block: 15s>
+<02/04/2022 13:05:30.722><Worker1 Mine one block: 13s>
+<02/04/2022 13:05:30.723><Worker3 Mine one block: 36s>
+<02/04/2022 13:05:30.724><Worker3 Mine one source (2 blocks) 53s>
+<02/04/2022 13:05:30.724><Worker3 Carries 2 blocks>
+<02/04/2022 13:05:30.724><Plno>
+<02/04/2022 13:05:30.724><Lorry 12 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.724><Lorry 12 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.742><Worker2 Mine one block: 47s>
+<02/04/2022 13:05:30.744><Worker3 Mine one block: 15s>
+<02/04/2022 13:05:30.747><Worker1 Mine one block: 24s>
+<02/04/2022 13:05:30.752><Worker4 Mine one block: 48s>
+<02/04/2022 13:05:30.768><Worker3 Mine one block: 21s>
+<02/04/2022 13:05:30.768><Worker1 Mine one block: 20s>
+<02/04/2022 13:05:30.774><Worker3 Mine one block: 5s>
+<02/04/2022 13:05:30.774><Worker3 Mine one source (3 blocks) 41s>
+<02/04/2022 13:05:30.774><Worker3 Carries 3 blocks>
+<02/04/2022 13:05:30.774><Lorry 12 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.774><Lorry 12 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.774><Lorry 12 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.776><Worker1 Mine one block: 7s>
+<02/04/2022 13:05:30.778><Worker3 Mine one block: 3s>
+<02/04/2022 13:05:30.792><Worker3 Mine one source (1 blocks) 3s>
+<02/04/2022 13:05:30.792><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:30.792><Lorry 12 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.801><Worker2 Mine one block: 37s>
+<02/04/2022 13:05:30.805><Worker1 Mine one block: 6s>
+<02/04/2022 13:05:30.805><Worker1 Mine one source (8 blocks) 167s>
+<02/04/2022 13:05:30.805><Worker1 Carries 8 blocks>
+<02/04/2022 13:05:30.806><Lorry 12 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.806><Lorry 12 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.806><Lorry 12 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.806><Lorry 12 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.806><Plno>
+<02/04/2022 13:05:30.806><Lorry 13 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.806><Lorry 13 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.806><Lorry 13 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.806><Lorry 13 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.806><Worker4 Mine one block: 33s>
+<02/04/2022 13:05:30.806><Worker4 Mine one source (2 blocks) 81s>
+<02/04/2022 13:05:30.806><Worker4 Carries 2 blocks>
+<02/04/2022 13:05:30.807><Lorry 13 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.813><Lorry 13 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.814><Worker1 Mine one block: 6s>
+<02/04/2022 13:05:30.842><Worker3 Mine one block: 7s>
+<02/04/2022 13:05:30.842><Worker3 Mine one source (1 blocks) 7s>
+<02/04/2022 13:05:30.842><Worker3 Carries 1 blocks>
+<02/04/2022 13:05:30.842><Lorry 13 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.843><Worker2 Mine one block: 8s>
+<02/04/2022 13:05:30.843><Worker1 Mine one block: 17s>
+<02/04/2022 13:05:30.847><Worker4 Mine one block: 26s>
+<02/04/2022 13:05:30.852><Worker4 Mine one block: 4s>
+<02/04/2022 13:05:30.861><Worker4 Mine one block: 8s>
+<02/04/2022 13:05:30.868><Worker3 Mine one block: 24s>
+<02/04/2022 13:05:30.869><Worker2 Mine one block: 25s>
+<02/04/2022 13:05:30.869><Worker2 Mine one source (13 blocks) 351s>
+<02/04/2022 13:05:30.869><Worker2 Carries 13 blocks>
+<02/04/2022 13:05:30.869><Lorry 13 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.869><Lorry 13 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.869><Lorry 13 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.869><Plno>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.869><Lorry 14 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.875><Worker3 Mine one block: 6s>
+<02/04/2022 13:05:30.876><Worker1 Mine one block: 32s>
+<02/04/2022 13:05:30.880><Worker1 Mine one block: 4s>
+<02/04/2022 13:05:30.880><Worker1 Mine one source (4 blocks) 59s>
+<02/04/2022 13:05:30.880><Worker1 Carries 4 blocks>
+<02/04/2022 13:05:30.880><Plno>
+<02/04/2022 13:05:30.880><Lorry 15 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.881><Lorry 15 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:30.881><Lorry 15 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:30.881><Lorry 15 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:30.884><Worker4 Mine one block: 22s>
+<02/04/2022 13:05:30.884><Worker4 Mine one source (4 blocks) 60s>
+<02/04/2022 13:05:30.884><Worker4 Carries 4 blocks>
+<02/04/2022 13:05:30.884><Lorry 15 Prazdno - Aktualni naplneni: 4 ze 10>
+<02/04/2022 13:05:30.884><Lorry 15 Prazdno - Aktualni naplneni: 5 ze 10>
+<02/04/2022 13:05:30.884><Lorry 15 Prazdno - Aktualni naplneni: 6 ze 10>
+<02/04/2022 13:05:30.884><Lorry 15 Prazdno - Aktualni naplneni: 7 ze 10>
+<02/04/2022 13:05:30.887><Worker3 Mine one block: 12s>
+<02/04/2022 13:05:30.887><Worker3 Mine one source (3 blocks) 42s>
+<02/04/2022 13:05:30.887><Worker3 Carries 3 blocks>
+<02/04/2022 13:05:30.887><Lorry 15 Prazdno - Aktualni naplneni: 8 ze 10>
+<02/04/2022 13:05:30.887><Lorry 15 Prazdno - Aktualni naplneni: 9 ze 10>
+<02/04/2022 13:05:30.887><Plno>
+<02/04/2022 13:05:30.887><Lorry 16 Prazdno - Aktualni naplneni: 0 ze 10>
+<02/04/2022 13:05:30.917><Worker2 Mine one block: 47s>
+<02/04/2022 13:05:30.958><Worker2 Mine one block: 41s>
+<02/04/2022 13:05:31.001><Worker2 Mine one block: 42s>
+<02/04/2022 13:05:31.013><Worker2 Mine one block: 11s>
+<02/04/2022 13:05:31.014><Worker2 Mine one source (4 blocks) 141s>
+<02/04/2022 13:05:31.014><Worker2 Carries 4 blocks>
+<02/04/2022 13:05:31.014><Lorry 16 Prazdno - Aktualni naplneni: 1 ze 10>
+<02/04/2022 13:05:31.014><Lorry 16 Prazdno - Aktualni naplneni: 2 ze 10>
+<02/04/2022 13:05:31.014><Lorry 16 Prazdno - Aktualni naplneni: 3 ze 10>
+<02/04/2022 13:05:31.014><Lorry 16 Prazdno - Aktualni naplneni: 4 ze 10>

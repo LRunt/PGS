@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Worker extends Thread{
+public class Worker implements Runnable{
     /** Name of worker*/
     private String name;
     /** A foreman who assigns work*/
@@ -30,7 +30,11 @@ public class Worker extends Thread{
             for(int i = 0; i < actualSource.length(); i++){
                 int miningTime = generateRandomNumber(0, time);
                 totalTime += miningTime;
-                farmer.sleep(this, miningTime);
+                try {
+                    Thread.sleep(miningTime);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 farmer.getPrinter().printAction(name + " Mine one block: "  + miningTime + "s");
             }
             farmer.getPrinter().printAction(String.format("%s Mine one source (%d blocks) %ds", name, sourceLength, totalTime));

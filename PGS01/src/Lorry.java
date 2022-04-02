@@ -18,6 +18,7 @@ public class Lorry {
         if(load < capLorry){
             farmer.getPrinter().printAction( name + " Prazdno - Aktualni naplneni: " + load + " ze " + capLorry);
             load++;
+            farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
         }else{
             farmer.getPrinter().printAction("Plno");
             farmer.createLorry();
