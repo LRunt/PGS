@@ -19,6 +19,7 @@ public class Farmer implements Runnable{
     private Thread[] workers;
     private int number;
     private Lorry actualLorry;
+    private Ferry dominik;
 
     /**
      * Constructor of class {@code Farmer}
@@ -34,6 +35,7 @@ public class Farmer implements Runnable{
         rowList = readFile(inputFile);
         data = prepareData(rowList);
         createLorry();
+        dominik = new Ferry(parameters.getCapFerry());
     }
 
     /**
@@ -91,6 +93,16 @@ public class Farmer implements Runnable{
             System.out.println("Vytvoren delnik " + (i + 1));
             workers[i].start();
         }
+
+        //Waiting for workers
+        for (int i = 0; i < workers.length; i++) {
+            try {
+                workers[i].join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
     }
 
     /**
@@ -113,8 +125,14 @@ public class Farmer implements Runnable{
         return null;
     }
 
+    public synchronized void sendLorry(){
+        Thread lorryThread = new Thread(actualLorry);
+        lorryThread.start();
+        actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
+    }
+
     public synchronized void createLorry(){
-        actualLorry = new Lorry(parameters.getCapLorry(), this);
+        actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
     }
 
     public List<String> getData() {
@@ -131,5 +149,9 @@ public class Farmer implements Runnable{
 
     public Lorry getActualLorry(){
         return actualLorry;
+    }
+
+    public Ferry getDominik() {
+        return dominik;
     }
 }
