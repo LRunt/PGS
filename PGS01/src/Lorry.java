@@ -26,4 +26,11 @@ public class Lorry {
         }
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public Farmer getFarmer() {
+        return farmer;
+    }
 }
