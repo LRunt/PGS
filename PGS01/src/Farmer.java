@@ -19,6 +19,7 @@ public class Farmer implements Runnable{
     private Worker[] workers;
     private int number;
     private Lorry actualLorry;
+    private Ferry actualFerry;
 
     /**
      * Constructor of class {@code Farmer}
@@ -34,6 +35,7 @@ public class Farmer implements Runnable{
         rowList = readFile(inputFile);
         data = prepareData(rowList);
         createLorry();
+        actualFerry = new Ferry(parameters.getCapFerry());
     }
 
     /**
@@ -144,4 +146,6 @@ public class Farmer implements Runnable{
     public Lorry getActualLorry(){
         return actualLorry;
     }
+
+    public Ferry getActualFerry(){return actualFerry; }
 }

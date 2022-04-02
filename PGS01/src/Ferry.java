@@ -22,7 +22,6 @@ public class Ferry {
      * @param lorry
      */
     public synchronized void transportLorry(Lorry lorry){
-
         while(!wait){
             lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az ostatni vlakna opusti barieru");
             try{
@@ -30,45 +29,31 @@ public class Ferry {
             }catch(InterruptedException ex){
                 ex.printStackTrace();
             }
-
             if(!wait){
                 System.err.println("Vlakno bylo samovolne probuzeno");
             }
         }
-
         lorryOnBoard++;
-
         if (lorryOnBoard == capFerry){
-
-
             wait = false;
-
             notifyAll();
         }
-
         while(wait){
             lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az privoz naplni");
-
             try{
                 wait();
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
-
             if(wait){
                 System.err.println("Vlakno bylo samovolne probuzeno");
             }
         }
-
         lorryOnBoard--;
-
         if(lorryOnBoard == 0){
             wait = true;
-
             System.out.println("Vlakno" + lorry.getName()+ " probouzi ostatni vlakna, predchozi inkarnaci bariery opustila vsechna vlakna.");
-
             notifyAll();
         }
-
     }
 }

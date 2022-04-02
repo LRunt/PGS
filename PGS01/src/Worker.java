@@ -38,7 +38,14 @@ public class Worker extends Thread{
             farmer.getPrinter().printAction(name  + " Carries " + actualSource.length() + " blocks");
             //Loading blocks
             for(int i = 0; i < actualSource.length(); i++) {
-                farmer.getActualLorry().loadCargo(this);
+                boolean loaded = false;
+                while(!loaded){
+                    if(!farmer.getActualLorry().isLoading()){
+                        farmer.getActualLorry().setLoading(true);
+                        loaded = farmer.getActualLorry().loadCargo(this);
+                        farmer.getActualLorry().setLoading(false);
+                    }
+                }
             }
         }
         farmer.getPrinter().writeToFile("output.txt");
