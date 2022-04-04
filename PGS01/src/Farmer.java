@@ -1,3 +1,4 @@
+import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -23,8 +24,10 @@ public class Farmer implements Runnable{
     private Printer printer = new Printer("output.txt");
     /** Input parameters with which was program executed*/
     private InputParameters parameters;
+    /** Array of threads of workers whose working in mine*/
+    private Thread[] workerThreads;
     /** Array of workers whose working in mine*/
-    private Thread[] workers;
+    private Worker[] workers;
     /** Number of assigned resources*/
     private int number;
     /** The lorry that is loading*/
@@ -39,6 +42,7 @@ public class Farmer implements Runnable{
     private final int LOADING_TIME = 10;
     /** Thread of lorry*/
     private Thread[] lorryThreads;
+    /** Number of required lorrys*/
     int lorryNumber;
 
     /**
@@ -51,16 +55,15 @@ public class Farmer implements Runnable{
         numberOfBlocks = 0;
         numberOfSources = 0;
         number = 0;
-        workers = new Thread[parameters.getcWorker()];
+        workers = new Worker[parameters.getcWorker()];
+        workerThreads = new Thread[parameters.getcWorker()];
         rowList = readFile(inputFile);
         data = prepareData(rowList);
         actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
         dominik = new Ferry(parameters.getCapFerry(), this);
-        //this.capLorry = parameters.getCapLorry();
         this.actualLoad = 0;
         this.lorryNumber = 0;
         int numberOfLorry = (int)Math.ceil((double)numberOfBlocks/parameters.getCapLorry());
-        System.out.println(numberOfLorry);
         lorryThreads = new Thread[numberOfLorry];
     }
 
@@ -102,16 +105,18 @@ public class Farmer implements Runnable{
      * @param parameters program arguments
      */
     public void printStartData(InputParameters parameters){
-        printer.printAction("Starting simulation");
-        printer.printAction("Input file: " + parameters.getInputFile());
-        printer.printAction("Output file: " + parameters.getOutputFile());
-        printer.printAction("Number of workers: " + parameters.getcWorker());
-        printer.printAction("Time of digging block: " + parameters.gettWorker());
-        printer.printAction("Capacity of one lorry: " + parameters.getCapLorry());
-        printer.printAction("Lorry driving time: " + parameters.gettLorry());
-        printer.printAction("Capacity of ferry: " + parameters.getCapFerry());
-        printer.printAction(this.name, Thread.currentThread().getName(), "Number of sources: " + numberOfSources);
-        printer.printAction(this.name, Thread.currentThread().getName(), "Number od blocks: " + numberOfBlocks);
+        printer.printAction("Starting...");
+        printer.printAction("----------------------------------------\n\t\t\tInput Parameters\n----------------------------------------");
+        printer.printAction("Input file:\t\t\t\t" + parameters.getInputFile());
+        printer.printAction("Output file:\t\t\t" + parameters.getOutputFile());
+        printer.printAction("Number of workers:\t\t" + parameters.getcWorker());
+        printer.printAction("Time of digging block:\t" + parameters.gettWorker());
+        printer.printAction("Capacity of one lorry:\t" + parameters.getCapLorry());
+        printer.printAction("Lorry driving time:\t\t" + parameters.gettLorry());
+        printer.printAction("Capacity of ferry:\t\t" + parameters.getCapFerry());
+        printer.printAction("Number of sources:\t\t" + numberOfSources);
+        printer.printAction("Number od blocks:\t\t" + numberOfBlocks);
+        printer.printAction("----------------------------------------\n\t\t\tSimulation\n----------------------------------------");
     }
 
     /**
@@ -122,24 +127,22 @@ public class Farmer implements Runnable{
         //Creating workers
         for(int i = 0; i < parameters.getcWorker(); i++){
             Worker newWorker = new Worker("Worker " + (i + 1), this, parameters.gettWorker());
-            workers[i] = new Thread(newWorker);
+            workers[i] = newWorker;
+            workerThreads[i] = new Thread(newWorker);
             //System.out.println("Worker " + (i + 1) + " was created.");
-            workers[i].start();
+            workerThreads[i].start();
         }
 
         //Waiting for workers
-        for (int i = 0; i < workers.length; i++) {
+        for (int i = 0; i < workerThreads.length; i++) {
             try {
-                workers[i].join();
+                workerThreads[i].join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
 
         //Sending the last lorry
-        /*if(actualLorry.getLoad() > 0){
-            sendLorry();
-        }*/
         if(actualLoad > 0){
             sendLorry();
         }
@@ -153,7 +156,20 @@ public class Farmer implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        printer.printAction("Simulation ended");
+
+        printer.printAction("----------------------------------------\n\t\t\tStatistics\n----------------------------------------");
+
+        int sumOfMidedBlocks = 0;
+        for(int i = 0; i < workerThreads.length; i++){
+            printer.printAction(workers[i].getName() + " mined " + workers[i].getBlocksMined() + " blocks.");
+            sumOfMidedBlocks += workers[i].getBlocksMined();
+        }
+
+        printer.printAction("A " + sumOfMidedBlocks + " has been mined in total.");
+
+        printer.printAction("A " + ((lorryNumber - 1) * parameters.getCapLorry() + actualLoad) + " has been transported.");
+
+        printer.printAction("----------------------------------------\n\t\t\tSimulation ended\n----------------------------------------");
     }
 
     /**
@@ -191,10 +207,10 @@ public class Farmer implements Runnable{
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
-            System.out.println("Nalozeno: " + actualLoad);
+            //System.out.println("Nalozeno: " + actualLoad);
             //farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
         }else{
-            System.out.println("Plno");
+            //System.out.println("Plno");
             Thread lorryThread = new Thread(actualLorry);
             lorryThreads[lorryNumber] = lorryThread;
             lorryNumber++;
@@ -254,5 +270,21 @@ public class Farmer implements Runnable{
      */
     public Ferry getDominik() {
         return dominik;
+    }
+
+    /**
+     * Getter of actual load of lorry
+     * @return actual load
+     */
+    public int getActualLoad() {
+        return actualLoad;
+    }
+
+    /**
+     * Getter of parameters
+     * @return parameters
+     */
+    public InputParameters getParameters(){
+       return parameters;
     }
 }

@@ -1,329 +1,258 @@
-<04/04/2022 15:04:20.753><Starting simulation>
-<04/04/2022 15:04:20.806><Input file: test.txt>
-<04/04/2022 15:04:20.807><Output file: output.txt>
-<04/04/2022 15:04:20.808><Number of workers: 4>
-<04/04/2022 15:04:20.808><Time of digging block: 50>
-<04/04/2022 15:04:20.808><Capacity of one lorry: 10>
-<04/04/2022 15:04:20.809><Lorry driving time: 1000>
-<04/04/2022 15:04:20.809><Capacity of ferry: 4>
-<04/04/2022 15:04:20.809><Farmer 1><main><Number of sources: 56>
-<04/04/2022 15:04:20.810><Farmer 1><main><Number od blocks: 155>
-<04/04/2022 15:04:20.827><Worker 4><Thread-3><Worker 4 Mine one block: 8ms>
-<04/04/2022 15:04:20.827><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 8ms>
-<04/04/2022 15:04:20.828><Worker 4 Carries 1 blocks>
-<04/04/2022 15:04:20.827><Worker 1><Thread-0><Worker 1 Mine one block: 1ms>
-<04/04/2022 15:04:20.828><Worker 2><Thread-1><Worker 2 Mine one block: 6ms>
-<04/04/2022 15:04:20.856><Worker 3><Thread-2><Worker 3 Mine one block: 41ms>
-<04/04/2022 15:04:20.856><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 41ms>
-<04/04/2022 15:04:20.856><Worker 3 Carries 1 blocks>
-<04/04/2022 15:04:20.860><Worker 4><Thread-3><Worker 4 Mine one block: 20ms>
-<04/04/2022 15:04:20.860><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 20ms>
-<04/04/2022 15:04:20.860><Worker 4 Carries 1 blocks>
-<04/04/2022 15:04:20.861><Worker 2><Thread-1><Worker 2 Mine one block: 31ms>
-<04/04/2022 15:04:20.863><Worker 2><Thread-1><Worker 2 Mine one block: 1ms>
-<04/04/2022 15:04:20.863><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 38ms>
-<04/04/2022 15:04:20.863><Worker 2 Carries 3 blocks>
-<04/04/2022 15:04:20.878><Worker 1><Thread-0><Worker 1 Mine one block: 49ms>
-<04/04/2022 15:04:20.902><Worker 1><Thread-0><Worker 1 Mine one block: 23ms>
-<04/04/2022 15:04:20.902><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 73ms>
-<04/04/2022 15:04:20.902><Worker 1 Carries 3 blocks>
-<04/04/2022 15:04:20.919><Worker 4><Thread-3><Worker 4 Mine one block: 8ms>
-<04/04/2022 15:04:20.921><Worker 4><Thread-3><Worker 4 Mine one block: 1ms>
-<04/04/2022 15:04:20.937><Worker 4><Thread-3><Worker 4 Mine one block: 15ms>
-<04/04/2022 15:04:20.979><Worker 4><Thread-3><Worker 4 Mine one block: 30ms>
-<04/04/2022 15:04:20.990><Worker 1><Thread-0><Worker 1 Mine one block: 16ms>
-<04/04/2022 15:04:20.990><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 16ms>
-<04/04/2022 15:04:20.990><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:20.993><Worker 4><Thread-3><Worker 4 Mine one block: 12ms>
-<04/04/2022 15:04:20.993><Worker 4><Thread-3><Worker 4 Mine one source (5 blocks) 66ms>
-<04/04/2022 15:04:20.994><Worker 4 Carries 5 blocks>
-<04/04/2022 15:04:20.998><Worker 3><Thread-2><Worker 3 Mine one block: 36ms>
-<04/04/2022 15:04:21.000><Worker 2><Thread-1><Worker 2 Mine one block: 38ms>
-<04/04/2022 15:04:21.000><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 38ms>
-<04/04/2022 15:04:21.001><Worker 2 Carries 1 blocks>
-<04/04/2022 15:04:21.010><Lorry 1><Thread-4><The lorry is filled and heading for the ferry, Loading time: 248ms>
-<04/04/2022 15:04:21.017><Worker 1><Thread-0><Worker 1 Mine one block: 16ms>
-<04/04/2022 15:04:21.017><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 16ms>
-<04/04/2022 15:04:21.017><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:21.028><Worker 3><Thread-2><Worker 3 Mine one block: 29ms>
-<04/04/2022 15:04:21.049><Worker 3><Thread-2><Worker 3 Mine one block: 20ms>
-<04/04/2022 15:04:21.050><Worker 3><Thread-2><Worker 3 Mine one source (3 blocks) 85ms>
-<04/04/2022 15:04:21.050><Worker 3 Carries 3 blocks>
-<04/04/2022 15:04:21.094><Worker 4><Thread-3><Worker 4 Mine one block: 38ms>
-<04/04/2022 15:04:21.108><Worker 2><Thread-1><Worker 2 Mine one block: 42ms>
-<04/04/2022 15:04:21.110><Worker 3><Thread-2><Worker 3 Mine one block: 11ms>
-<04/04/2022 15:04:21.111><Worker 2><Thread-1><Worker 2 Mine one block: 2ms>
-<04/04/2022 15:04:21.126><Worker 4><Thread-3><Worker 4 Mine one block: 31ms>
-<04/04/2022 15:04:21.130><Worker 3><Thread-2><Worker 3 Mine one block: 19ms>
-<04/04/2022 15:04:21.140><Worker 1><Thread-0><Worker 1 Mine one block: 30ms>
-<04/04/2022 15:04:21.140><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 30ms>
-<04/04/2022 15:04:21.140><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:21.141><Lorry 2><Thread-5><The lorry is filled and heading for the ferry, Loading time: 141ms>
-<04/04/2022 15:04:21.155><Worker 4><Thread-3><Worker 4 Mine one block: 28ms>
-<04/04/2022 15:04:21.161><Worker 2><Thread-1><Worker 2 Mine one block: 49ms>
-<04/04/2022 15:04:21.161><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 93ms>
-<04/04/2022 15:04:21.161><Worker 2 Carries 3 blocks>
-<04/04/2022 15:04:21.172><Worker 4><Thread-3><Worker 4 Mine one block: 16ms>
-<04/04/2022 15:04:21.172><Worker 4><Thread-3><Worker 4 Mine one source (4 blocks) 113ms>
-<04/04/2022 15:04:21.172><Worker 4 Carries 4 blocks>
-<04/04/2022 15:04:21.180><Worker 3><Thread-2><Worker 3 Mine one block: 49ms>
-<04/04/2022 15:04:21.181><Worker 3><Thread-2><Worker 3 Mine one source (3 blocks) 79ms>
-<04/04/2022 15:04:21.181><Worker 3 Carries 3 blocks>
-<04/04/2022 15:04:21.201><Worker 1><Thread-0><Worker 1 Mine one block: 49ms>
-<04/04/2022 15:04:21.201><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 49ms>
-<04/04/2022 15:04:21.201><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:21.240><Worker 3><Thread-2><Worker 3 Mine one block: 24ms>
-<04/04/2022 15:04:21.259><Lorry 3><Thread-6><The lorry is filled and heading for the ferry, Loading time: 119ms>
-<04/04/2022 15:04:21.273><Worker 1><Thread-0><Worker 1 Mine one block: 2ms>
-<04/04/2022 15:04:21.276><Worker 4><Thread-3><Worker 4 Mine one block: 17ms>
-<04/04/2022 15:04:21.286><Worker 3><Thread-2><Worker 3 Mine one block: 45ms>
-<04/04/2022 15:04:21.294><Worker 3><Thread-2><Worker 3 Mine one block: 6ms>
-<04/04/2022 15:04:21.295><Worker 3><Thread-2><Worker 3 Mine one source (3 blocks) 75ms>
-<04/04/2022 15:04:21.295><Worker 3 Carries 3 blocks>
-<04/04/2022 15:04:21.299><Worker 2><Thread-1><Worker 2 Mine one block: 17ms>
-<04/04/2022 15:04:21.301><Worker 1><Thread-0><Worker 1 Mine one block: 27ms>
-<04/04/2022 15:04:21.310><Worker 4><Thread-3><Worker 4 Mine one block: 33ms>
-<04/04/2022 15:04:21.319><Worker 1><Thread-0><Worker 1 Mine one block: 17ms>
-<04/04/2022 15:04:21.328><Worker 2><Thread-1><Worker 2 Mine one block: 26ms>
-<04/04/2022 15:04:21.338><Worker 3><Thread-2><Worker 3 Mine one block: 2ms>
-<04/04/2022 15:04:21.339><Worker 4><Thread-3><Worker 4 Mine one block: 18ms>
-<04/04/2022 15:04:21.344><Worker 1><Thread-0><Worker 1 Mine one block: 24ms>
-<04/04/2022 15:04:21.344><Worker 1><Thread-0><Worker 1 Mine one source (4 blocks) 70ms>
-<04/04/2022 15:04:21.344><Worker 1 Carries 4 blocks>
-<04/04/2022 15:04:21.353><Worker 2><Thread-1><Worker 2 Mine one block: 23ms>
-<04/04/2022 15:04:21.353><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 66ms>
-<04/04/2022 15:04:21.353><Worker 2 Carries 3 blocks>
-<04/04/2022 15:04:21.360><Worker 4><Thread-3><Worker 4 Mine one block: 17ms>
-<04/04/2022 15:04:21.369><Worker 3><Thread-2><Worker 3 Mine one block: 30ms>
-<04/04/2022 15:04:21.373><Worker 3><Thread-2><Worker 3 Mine one block: 3ms>
-<04/04/2022 15:04:21.373><Worker 3><Thread-2><Worker 3 Mine one source (3 blocks) 35ms>
-<04/04/2022 15:04:21.373><Worker 3 Carries 3 blocks>
-<04/04/2022 15:04:21.397><Lorry 4><Thread-7><The lorry is filled and heading for the ferry, Loading time: 138ms>
-<04/04/2022 15:04:21.399><Worker 4><Thread-3><Worker 4 Mine one block: 38ms>
-<04/04/2022 15:04:21.399><Worker 4><Thread-3><Worker 4 Mine one source (5 blocks) 123ms>
-<04/04/2022 15:04:21.399><Worker 4 Carries 5 blocks>
-<04/04/2022 15:04:21.442><Worker 2><Thread-1><Worker 2 Mine one block: 44ms>
-<04/04/2022 15:04:21.445><Worker 3><Thread-2><Worker 3 Mine one block: 14ms>
-<04/04/2022 15:04:21.453><Worker 2><Thread-1><Worker 2 Mine one block: 7ms>
-<04/04/2022 15:04:21.456><Worker 3><Thread-2><Worker 3 Mine one block: 10ms>
-<04/04/2022 15:04:21.460><Worker 1><Thread-0><Worker 1 Mine one block: 7ms>
-<04/04/2022 15:04:21.466><Worker 3><Thread-2><Worker 3 Mine one block: 6ms>
-<04/04/2022 15:04:21.485><Worker 2><Thread-1><Worker 2 Mine one block: 31ms>
-<04/04/2022 15:04:21.487><Worker 1><Thread-0><Worker 1 Mine one block: 26ms>
-<04/04/2022 15:04:21.504><Worker 1><Thread-0><Worker 1 Mine one block: 13ms>
-<04/04/2022 15:04:21.508><Worker 3><Thread-2><Worker 3 Mine one block: 41ms>
-<04/04/2022 15:04:21.508><Worker 3><Thread-2><Worker 3 Mine one source (4 blocks) 71ms>
-<04/04/2022 15:04:21.508><Worker 3 Carries 4 blocks>
-<04/04/2022 15:04:21.509><Lorry 5><Thread-8><The lorry is filled and heading for the ferry, Loading time: 112ms>
-<04/04/2022 15:04:21.534><Worker 2><Thread-1><Worker 2 Mine one block: 48ms>
-<04/04/2022 15:04:21.535><Worker 4><Thread-3><Worker 4 Mine one block: 25ms>
-<04/04/2022 15:04:21.535><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 25ms>
-<04/04/2022 15:04:21.535><Worker 4 Carries 1 blocks>
-<04/04/2022 15:04:21.538><Worker 1><Thread-0><Worker 1 Mine one block: 33ms>
-<04/04/2022 15:04:21.538><Worker 1><Thread-0><Worker 1 Mine one source (4 blocks) 79ms>
-<04/04/2022 15:04:21.538><Worker 1 Carries 4 blocks>
-<04/04/2022 15:04:21.568><Worker 2><Thread-1><Worker 2 Mine one block: 33ms>
-<04/04/2022 15:04:21.575><Lorry 1><Thread-4><The truck has arrived at the ferry, Time of travel: 563ms>
-<04/04/2022 15:04:21.604><Worker 2><Thread-1><Worker 2 Mine one block: 35ms>
-<04/04/2022 15:04:21.606><Worker 2><Thread-1><Worker 2 Mine one source (6 blocks) 198ms>
-<04/04/2022 15:04:21.609><Worker 2 Carries 6 blocks>
-<04/04/2022 15:04:21.620><Worker 4><Thread-3><Worker 4 Mine one block: 10ms>
-<04/04/2022 15:04:21.625><Lorry 6><Thread-9><The lorry is filled and heading for the ferry, Loading time: 116ms>
-<04/04/2022 15:04:21.634><Worker 3><Thread-2><Worker 3 Mine one block: 24ms>
-<04/04/2022 15:04:21.637><Worker 1><Thread-0><Worker 1 Mine one block: 39ms>
-<04/04/2022 15:04:21.637><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 39ms>
-<04/04/2022 15:04:21.638><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:21.656><Worker 4><Thread-3><Worker 4 Mine one block: 29ms>
-<04/04/2022 15:04:21.656><Worker 4><Thread-3><Worker 4 Mine one source (2 blocks) 39ms>
-<04/04/2022 15:04:21.656><Worker 4 Carries 2 blocks>
-<04/04/2022 15:04:21.661><Worker 1><Thread-0><Worker 1 Mine one block: 4ms>
-<04/04/2022 15:04:21.671><Worker 3><Thread-2><Worker 3 Mine one block: 36ms>
-<04/04/2022 15:04:21.683><Worker 1><Thread-0><Worker 1 Mine one block: 21ms>
-<04/04/2022 15:04:21.705><Worker 1><Thread-0><Worker 1 Mine one block: 21ms>
-<04/04/2022 15:04:21.705><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 46ms>
-<04/04/2022 15:04:21.705><Worker 1 Carries 3 blocks>
-<04/04/2022 15:04:21.713><Worker 3><Thread-2><Worker 3 Mine one block: 41ms>
-<04/04/2022 15:04:21.730><Worker 3><Thread-2><Worker 3 Mine one block: 16ms>
-<04/04/2022 15:04:21.730><Worker 3><Thread-2><Worker 3 Mine one source (4 blocks) 117ms>
-<04/04/2022 15:04:21.730><Worker 3 Carries 4 blocks>
-<04/04/2022 15:04:21.733><Lorry 7><Thread-10><The lorry is filled and heading for the ferry, Loading time: 110ms>
-<04/04/2022 15:04:21.734><Worker 4><Thread-3><Worker 4 Mine one block: 22ms>
-<04/04/2022 15:04:21.745><Worker 4><Thread-3><Worker 4 Mine one block: 10ms>
-<04/04/2022 15:04:21.764><Worker 4><Thread-3><Worker 4 Mine one block: 18ms>
-<04/04/2022 15:04:21.764><Worker 4><Thread-3><Worker 4 Mine one source (3 blocks) 50ms>
-<04/04/2022 15:04:21.764><Worker 4 Carries 3 blocks>
-<04/04/2022 15:04:21.764><Worker 1><Thread-0><Worker 1 Mine one block: 19ms>
-<04/04/2022 15:04:21.772><Worker 2><Thread-1><Worker 2 Mine one block: 27ms>
-<04/04/2022 15:04:21.774><Lorry 2><Thread-5><The truck has arrived at the ferry, Time of travel: 633ms>
-<04/04/2022 15:04:21.798><Worker 2><Thread-1><Worker 2 Mine one block: 25ms>
-<04/04/2022 15:04:21.798><Worker 2><Thread-1><Worker 2 Mine one source (2 blocks) 52ms>
-<04/04/2022 15:04:21.798><Worker 2 Carries 2 blocks>
-<04/04/2022 15:04:21.814><Worker 1><Thread-0><Worker 1 Mine one block: 49ms>
-<04/04/2022 15:04:21.825><Worker 3><Thread-2><Worker 3 Mine one block: 36ms>
-<04/04/2022 15:04:21.825><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 36ms>
-<04/04/2022 15:04:21.827><Worker 3 Carries 1 blocks>
-<04/04/2022 15:04:21.827><Lorry 5><Thread-8><The truck has arrived at the ferry, Time of travel: 318ms>
-<04/04/2022 15:04:21.839><Worker 4><Thread-3><Worker 4 Mine one block: 18ms>
-<04/04/2022 15:04:21.842><Lorry 8><Thread-11><The lorry is filled and heading for the ferry, Loading time: 109ms>
-<04/04/2022 15:04:21.858><Worker 4><Thread-3><Worker 4 Mine one block: 18ms>
-<04/04/2022 15:04:21.859><Worker 1><Thread-0><Worker 1 Mine one block: 44ms>
-<04/04/2022 15:04:21.872><Worker 4><Thread-3><Worker 4 Mine one block: 13ms>
-<04/04/2022 15:04:21.873><Lorry 8><Thread-11><The truck has arrived at the ferry, Time of travel: 30ms>
-<04/04/2022 15:04:21.874><Ferry 0><Thread-5><The ferry has started. It was waiting to be filled for: 1121ms>
-<04/04/2022 15:04:21.875><Worker 3><Thread-2><Worker 3 Mine one block: 22ms>
-<04/04/2022 15:04:21.877><Worker 3><Thread-2><Worker 3 Mine one block: 2ms>
-<04/04/2022 15:04:21.892><Worker 2><Thread-1><Worker 2 Mine one block: 49ms>
-<04/04/2022 15:04:21.898><Worker 3><Thread-2><Worker 3 Mine one block: 20ms>
-<04/04/2022 15:04:21.904><Worker 1><Thread-0><Worker 1 Mine one block: 44ms>
-<04/04/2022 15:04:21.904><Worker 1><Thread-0><Worker 1 Mine one source (4 blocks) 156ms>
-<04/04/2022 15:04:21.904><Worker 1 Carries 4 blocks>
-<04/04/2022 15:04:21.912><Worker 4><Thread-3><Worker 4 Mine one block: 39ms>
-<04/04/2022 15:04:21.912><Worker 4><Thread-3><Worker 4 Mine one source (4 blocks) 88ms>
-<04/04/2022 15:04:21.912><Worker 4 Carries 4 blocks>
-<04/04/2022 15:04:21.926><Worker 2><Thread-1><Worker 2 Mine one block: 33ms>
-<04/04/2022 15:04:21.926><Worker 2><Thread-1><Worker 2 Mine one source (2 blocks) 82ms>
-<04/04/2022 15:04:21.926><Worker 2 Carries 2 blocks>
-<04/04/2022 15:04:21.934><Worker 3><Thread-2><Worker 3 Mine one block: 35ms>
-<04/04/2022 15:04:21.969><Worker 3><Thread-2><Worker 3 Mine one block: 34ms>
-<04/04/2022 15:04:21.989><Worker 4><Thread-3><Worker 4 Mine one block: 29ms>
-<04/04/2022 15:04:21.993><Worker 3><Thread-2><Worker 3 Mine one block: 23ms>
-<04/04/2022 15:04:22.001><Lorry 4><Thread-7><The truck has arrived at the ferry, Time of travel: 602ms>
-<04/04/2022 15:04:22.002><Lorry 9><Thread-12><The lorry is filled and heading for the ferry, Loading time: 160ms>
-<04/04/2022 15:04:22.006><Worker 4><Thread-3><Worker 4 Mine one block: 16ms>
-<04/04/2022 15:04:22.010><Worker 3><Thread-2><Worker 3 Mine one block: 16ms>
-<04/04/2022 15:04:22.012><Worker 1><Thread-0><Worker 1 Mine one block: 19ms>
-<04/04/2022 15:04:22.024><Worker 3><Thread-2><Worker 3 Mine one block: 13ms>
-<04/04/2022 15:04:22.036><Worker 3><Thread-2><Worker 3 Mine one block: 11ms>
-<04/04/2022 15:04:22.040><Worker 3><Thread-2><Worker 3 Mine one block: 3ms>
-<04/04/2022 15:04:22.047><Worker 4><Thread-3><Worker 4 Mine one block: 40ms>
-<04/04/2022 15:04:22.060><Worker 2><Thread-1><Worker 2 Mine one block: 46ms>
-<04/04/2022 15:04:22.060><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 46ms>
-<04/04/2022 15:04:22.060><Worker 2 Carries 1 blocks>
-<04/04/2022 15:04:22.062><Worker 3><Thread-2><Worker 3 Mine one block: 21ms>
-<04/04/2022 15:04:22.062><Worker 1><Thread-0><Worker 1 Mine one block: 49ms>
-<04/04/2022 15:04:22.062><Worker 1><Thread-0><Worker 1 Mine one source (2 blocks) 68ms>
-<04/04/2022 15:04:22.062><Worker 1 Carries 2 blocks>
-<04/04/2022 15:04:22.078><Worker 4><Thread-3><Worker 4 Mine one block: 31ms>
-<04/04/2022 15:04:22.078><Worker 4><Thread-3><Worker 4 Mine one source (4 blocks) 116ms>
-<04/04/2022 15:04:22.078><Worker 4 Carries 4 blocks>
-<04/04/2022 15:04:22.086><Worker 2><Thread-1><Worker 2 Mine one block: 15ms>
-<04/04/2022 15:04:22.086><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 15ms>
-<04/04/2022 15:04:22.086><Worker 2 Carries 1 blocks>
-<04/04/2022 15:04:22.104><Worker 3><Thread-2><Worker 3 Mine one block: 42ms>
-<04/04/2022 15:04:22.104><Worker 1><Thread-0><Worker 1 Mine one block: 13ms>
-<04/04/2022 15:04:22.104><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 13ms>
-<04/04/2022 15:04:22.104><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:22.121><Lorry 1><Thread-4><The lorry arrived at its destination, Travel time from ferry: 248ms>
-<04/04/2022 15:04:22.148><Worker 3><Thread-2><Worker 3 Mine one block: 44ms>
-<04/04/2022 15:04:22.148><Worker 2><Thread-1><Worker 2 Mine one block: 5ms>
-<04/04/2022 15:04:22.148><Worker 3><Thread-2><Worker 3 Mine one source (13 blocks) 286ms>
-<04/04/2022 15:04:22.148><Worker 3 Carries 13 blocks>
-<04/04/2022 15:04:22.148><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 5ms>
-<04/04/2022 15:04:22.148><Worker 2 Carries 1 blocks>
-<04/04/2022 15:04:22.153><Lorry 10><Thread-13><The lorry is filled and heading for the ferry, Loading time: 151ms>
-<04/04/2022 15:04:22.174><Worker 1><Thread-0><Worker 1 Mine one block: 21ms>
-<04/04/2022 15:04:22.181><Worker 4><Thread-3><Worker 4 Mine one block: 48ms>
-<04/04/2022 15:04:22.181><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 48ms>
-<04/04/2022 15:04:22.181><Worker 4 Carries 1 blocks>
-<04/04/2022 15:04:22.188><Worker 1><Thread-0><Worker 1 Mine one block: 13ms>
-<04/04/2022 15:04:22.189><Worker 2><Thread-1><Worker 2 Mine one block: 25ms>
-<04/04/2022 15:04:22.189><Lorry 3><Thread-6><The truck has arrived at the ferry, Time of travel: 929ms>
-<04/04/2022 15:04:22.189><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 25ms>
-<04/04/2022 15:04:22.189><Worker 2 Carries 1 blocks>
-<04/04/2022 15:04:22.236><Worker 1><Thread-0><Worker 1 Mine one block: 47ms>
-<04/04/2022 15:04:22.236><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 81ms>
-<04/04/2022 15:04:22.236><Worker 1 Carries 3 blocks>
-<04/04/2022 15:04:22.260><Lorry 11><Thread-14><The lorry is filled and heading for the ferry, Loading time: 107ms>
-<04/04/2022 15:04:22.274><Lorry 8><Thread-11><The lorry arrived at its destination, Travel time from ferry: 400ms>
-<04/04/2022 15:04:22.298><Lorry 6><Thread-9><The truck has arrived at the ferry, Time of travel: 672ms>
-<04/04/2022 15:04:22.316><Worker 4><Thread-3><Worker 4 Mine one block: 3ms>
-<04/04/2022 15:04:22.331><Worker 3><Thread-2><Worker 3 Mine one block: 29ms>
-<04/04/2022 15:04:22.341><Worker 4><Thread-3><Worker 4 Mine one block: 25ms>
-<04/04/2022 15:04:22.346><Worker 4><Thread-3><Worker 4 Mine one block: 5ms>
-<04/04/2022 15:04:22.346><Worker 4><Thread-3><Worker 4 Mine one source (3 blocks) 33ms>
-<04/04/2022 15:04:22.346><Worker 4 Carries 3 blocks>
-<04/04/2022 15:04:22.366><Lorry 12><Thread-15><The lorry is filled and heading for the ferry, Loading time: 107ms>
-<04/04/2022 15:04:22.373><Worker 3><Thread-2><Worker 3 Mine one block: 41ms>
-<04/04/2022 15:04:22.388><Worker 2><Thread-1><Worker 2 Mine one block: 33ms>
-<04/04/2022 15:04:22.388><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 33ms>
-<04/04/2022 15:04:22.388><Worker 2 Carries 1 blocks>
-<04/04/2022 15:04:22.389><Worker 4><Thread-3><Worker 4 Mine one block: 1ms>
-<04/04/2022 15:04:22.391><Worker 1><Thread-0><Worker 1 Mine one block: 46ms>
-<04/04/2022 15:04:22.410><Worker 2><Thread-1><Worker 2 Mine one block: 10ms>
-<04/04/2022 15:04:22.412><Worker 3><Thread-2><Worker 3 Mine one block: 38ms>
-<04/04/2022 15:04:22.421><Worker 1><Thread-0><Worker 1 Mine one block: 30ms>
-<04/04/2022 15:04:22.421><Worker 1><Thread-0><Worker 1 Mine one source (2 blocks) 76ms>
-<04/04/2022 15:04:22.421><Worker 1 Carries 2 blocks>
-<04/04/2022 15:04:22.427><Worker 4><Thread-3><Worker 4 Mine one block: 37ms>
-<04/04/2022 15:04:22.427><Worker 4><Thread-3><Worker 4 Mine one source (2 blocks) 38ms>
-<04/04/2022 15:04:22.427><Worker 4 Carries 2 blocks>
-<04/04/2022 15:04:22.440><Lorry 7><Thread-10><The truck has arrived at the ferry, Time of travel: 706ms>
-<04/04/2022 15:04:22.440><Ferry 1><Thread-6><The ferry has started. It was waiting to be filled for: 566ms>
-<04/04/2022 15:04:22.451><Worker 3><Thread-2><Worker 3 Mine one block: 38ms>
-<04/04/2022 15:04:22.456><Worker 2><Thread-1><Worker 2 Mine one block: 46ms>
-<04/04/2022 15:04:22.467><Worker 1><Thread-0><Worker 1 Mine one block: 24ms>
-<04/04/2022 15:04:22.467><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 24ms>
-<04/04/2022 15:04:22.467><Worker 1 Carries 1 blocks>
-<04/04/2022 15:04:22.481><Worker 4><Thread-3><Worker 4 Mine one block: 17ms>
-<04/04/2022 15:04:22.481><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 17ms>
-<04/04/2022 15:04:22.481><Worker 4 Carries 1 blocks>
-<04/04/2022 15:04:22.486><Worker 2><Thread-1><Worker 2 Mine one block: 29ms>
-<04/04/2022 15:04:22.486><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 85ms>
-<04/04/2022 15:04:22.486><Worker 2 Carries 3 blocks>
-<04/04/2022 15:04:22.490><Worker 3><Thread-2><Worker 3 Mine one block: 39ms>
-<04/04/2022 15:04:22.492><Lorry 10><Thread-13><The truck has arrived at the ferry, Time of travel: 339ms>
-<04/04/2022 15:04:22.500><Worker 1><Thread-0><Worker 1 Mine one block: 21ms>
-<04/04/2022 15:04:22.503><Lorry 13><Thread-16><The lorry is filled and heading for the ferry, Loading time: 137ms>
-<04/04/2022 15:04:22.517><Worker 3><Thread-2><Worker 3 Mine one block: 26ms>
-<04/04/2022 15:04:22.526><Worker 4><Thread-3><Worker 4 Mine one block: 33ms>
-<04/04/2022 15:04:22.534><Worker 1><Thread-0><Worker 1 Mine one block: 33ms>
-<04/04/2022 15:04:22.539><Worker 3><Thread-2><Worker 3 Mine one block: 21ms>
-<04/04/2022 15:04:22.541><Worker 2><Thread-1><Worker 2 Mine one block: 15ms>
-<04/04/2022 15:04:22.561><Worker 1><Thread-0><Worker 1 Mine one block: 27ms>
-<04/04/2022 15:04:22.575><Worker 4><Thread-3><Worker 4 Mine one block: 49ms>
-<04/04/2022 15:04:22.576><Worker 2><Thread-1><Worker 2 Mine one block: 35ms>
-<04/04/2022 15:04:22.578><Worker 4><Thread-3><Worker 4 Mine one block: 3ms>
-<04/04/2022 15:04:22.580><Worker 3><Thread-2><Worker 3 Mine one block: 41ms>
-<04/04/2022 15:04:22.580><Worker 3><Thread-2><Worker 3 Mine one source (8 blocks) 273ms>
-<04/04/2022 15:04:22.580><Worker 3 Carries 8 blocks>
-<04/04/2022 15:04:22.583><Lorry 3><Thread-6><The lorry arrived at its destination, Travel time from ferry: 142ms>
-<04/04/2022 15:04:22.589><Worker 2><Thread-1><Worker 2 Mine one block: 12ms>
-<04/04/2022 15:04:22.589><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 62ms>
-<04/04/2022 15:04:22.589><Worker 2 Carries 3 blocks>
-<04/04/2022 15:04:22.591><Worker 1><Thread-0><Worker 1 Mine one block: 30ms>
-<04/04/2022 15:04:22.591><Worker 1><Thread-0><Worker 1 Mine one source (4 blocks) 111ms>
-<04/04/2022 15:04:22.591><Worker 1 Carries 4 blocks>
-<04/04/2022 15:04:22.610><Worker 4><Thread-3><Worker 4 Mine one block: 31ms>
-<04/04/2022 15:04:22.610><Worker 4><Thread-3><Worker 4 Mine one source (4 blocks) 116ms>
-<04/04/2022 15:04:22.610><Worker 4 Carries 4 blocks>
-<04/04/2022 15:04:22.661><Lorry 5><Thread-8><The lorry arrived at its destination, Travel time from ferry: 788ms>
-<04/04/2022 15:04:22.665><Lorry 14><Thread-17><The lorry is filled and heading for the ferry, Loading time: 162ms>
-<04/04/2022 15:04:22.714><Lorry 9><Thread-12><The truck has arrived at the ferry, Time of travel: 712ms>
-<04/04/2022 15:04:22.732><Worker 2><Thread-1><Worker 2 Mine one block: 46ms>
-<04/04/2022 15:04:22.757><Worker 2><Thread-1><Worker 2 Mine one block: 25ms>
-<04/04/2022 15:04:22.770><Lorry 15><Thread-18><The lorry is filled and heading for the ferry, Loading time: 105ms>
-<04/04/2022 15:04:22.798><Worker 2><Thread-1><Worker 2 Mine one block: 41ms>
-<04/04/2022 15:04:22.824><Worker 2><Thread-1><Worker 2 Mine one block: 25ms>
-<04/04/2022 15:04:22.824><Worker 2><Thread-1><Worker 2 Mine one source (4 blocks) 137ms>
-<04/04/2022 15:04:22.824><Worker 2 Carries 4 blocks>
-<04/04/2022 15:04:22.850><Lorry 2><Thread-5><The lorry arrived at its destination, Travel time from ferry: 975ms>
-<04/04/2022 15:04:22.867><Lorry 16><Thread-19><The lorry is filled and heading for the ferry, Loading time: 97ms>
-<04/04/2022 15:04:22.987><Lorry 7><Thread-10><The lorry arrived at its destination, Travel time from ferry: 547ms>
-<04/04/2022 15:04:23.024><Lorry 11><Thread-14><The truck has arrived at the ferry, Time of travel: 763ms>
-<04/04/2022 15:04:23.055><Lorry 4><Thread-7><The lorry arrived at its destination, Travel time from ferry: 614ms>
-<04/04/2022 15:04:23.081><Lorry 16><Thread-19><The truck has arrived at the ferry, Time of travel: 213ms>
-<04/04/2022 15:04:23.081><Ferry 2><Thread-12><The ferry has started. It was waiting to be filled for: 640ms>
-<04/04/2022 15:04:23.100><Lorry 12><Thread-15><The truck has arrived at the ferry, Time of travel: 733ms>
-<04/04/2022 15:04:23.161><Lorry 6><Thread-9><The lorry arrived at its destination, Travel time from ferry: 720ms>
-<04/04/2022 15:04:23.340><Lorry 14><Thread-17><The truck has arrived at the ferry, Time of travel: 674ms>
-<04/04/2022 15:04:23.387><Lorry 11><Thread-14><The lorry arrived at its destination, Travel time from ferry: 306ms>
-<04/04/2022 15:04:23.424><Lorry 9><Thread-12><The lorry arrived at its destination, Travel time from ferry: 343ms>
-<04/04/2022 15:04:23.453><Lorry 13><Thread-16><The truck has arrived at the ferry, Time of travel: 950ms>
-<04/04/2022 15:04:23.713><Lorry 16><Thread-19><The lorry arrived at its destination, Travel time from ferry: 632ms>
-<04/04/2022 15:04:23.717><Lorry 10><Thread-13><The lorry arrived at its destination, Travel time from ferry: 636ms>
-<04/04/2022 15:04:23.730><Lorry 15><Thread-18><The truck has arrived at the ferry, Time of travel: 959ms>
-<04/04/2022 15:04:23.730><Ferry 3><Thread-17><The ferry has started. It was waiting to be filled for: 649ms>
-<04/04/2022 15:04:23.854><Lorry 12><Thread-15><The lorry arrived at its destination, Travel time from ferry: 123ms>
-<04/04/2022 15:04:23.997><Lorry 14><Thread-17><The lorry arrived at its destination, Travel time from ferry: 267ms>
-<04/04/2022 15:04:24.569><Lorry 13><Thread-16><The lorry arrived at its destination, Travel time from ferry: 839ms>
-<04/04/2022 15:04:24.693><Lorry 15><Thread-18><The lorry arrived at its destination, Travel time from ferry: 962ms>
+<04/04/2022 17:33:41.845><Worker 2><Thread-1><Worker 2 Mine one block: 26ms>
+<04/04/2022 17:33:41.884><Worker 1><Thread-0><Worker 1 Mine one block: 16ms>
+<04/04/2022 17:33:41.921><Worker 2><Thread-1><Worker 2 Mine one block: 34ms>
+<04/04/2022 17:33:41.928><Worker 3><Thread-2><Worker 3 Mine one block: 7ms>
+<04/04/2022 17:33:41.928><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 7ms>
+<04/04/2022 17:33:41.930><Worker 4><Thread-3><Worker 4 Mine one block: 9ms>
+<04/04/2022 17:33:41.932><Worker 1><Thread-0><Worker 1 Mine one block: 38ms>
+<04/04/2022 17:33:41.932><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 57ms>
+<04/04/2022 17:33:41.942><Worker 4><Thread-3><Worker 4 Mine one block: 11ms>
+<04/04/2022 17:33:41.963><Worker 4><Thread-3><Worker 4 Mine one block: 20ms>
+<04/04/2022 17:33:41.967><Worker 2><Thread-1><Worker 2 Mine one block: 45ms>
+<04/04/2022 17:33:41.968><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 105ms>
+<04/04/2022 17:33:41.970><Worker 3><Thread-2><Worker 3 Mine one block: 30ms>
+<04/04/2022 17:33:41.971><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 30ms>
+<04/04/2022 17:33:41.984><Worker 4><Thread-3><Worker 4 Mine one block: 20ms>
+<04/04/2022 17:33:42.013><Worker 3><Thread-2><Worker 3 Mine one block: 22ms>
+<04/04/2022 17:33:42.013><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 22ms>
+<04/04/2022 17:33:42.015><Worker 4><Thread-3><Worker 4 Mine one block: 29ms>
+<04/04/2022 17:33:42.015><Worker 4><Thread-3><Worker 4 Mine one source (5 blocks) 89ms>
+<04/04/2022 17:33:42.021><Worker 1><Thread-0><Worker 1 Mine one block: 43ms>
+<04/04/2022 17:33:42.043><Worker 1><Thread-0><Worker 1 Mine one block: 10ms>
+<04/04/2022 17:33:42.049><Lorry 1><Thread-4><Lorry 1 is filled and heading for the ferry, Loading time: 241ms>
+<04/04/2022 17:33:42.071><Worker 1><Thread-0><Worker 1 Mine one block: 20ms>
+<04/04/2022 17:33:42.072><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 73ms>
+<04/04/2022 17:33:42.088><Worker 2><Thread-1><Worker 2 Mine one block: 19ms>
+<04/04/2022 17:33:42.090><Worker 3><Thread-2><Worker 3 Mine one block: 37ms>
+<04/04/2022 17:33:42.090><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 37ms>
+<04/04/2022 17:33:42.134><Worker 2><Thread-1><Worker 2 Mine one block: 45ms>
+<04/04/2022 17:33:42.149><Worker 1><Thread-0><Worker 1 Mine one block: 6ms>
+<04/04/2022 17:33:42.149><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 6ms>
+<04/04/2022 17:33:42.149><Lorry 2><Thread-5><Lorry 2 is filled and heading for the ferry, Loading time: 126ms>
+<04/04/2022 17:33:42.154><Worker 2><Thread-1><Worker 2 Mine one block: 19ms>
+<04/04/2022 17:33:42.156><Worker 3><Thread-2><Worker 3 Mine one block: 13ms>
+<04/04/2022 17:33:42.160><Worker 4><Thread-3><Worker 4 Mine one block: 49ms>
+<04/04/2022 17:33:42.161><Worker 4><Thread-3><Worker 4 Mine one block: 1ms>
+<04/04/2022 17:33:42.176><Worker 1><Thread-0><Worker 1 Mine one block: 16ms>
+<04/04/2022 17:33:42.176><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 16ms>
+<04/04/2022 17:33:42.178><Worker 2><Thread-1><Worker 2 Mine one block: 23ms>
+<04/04/2022 17:33:42.178><Worker 2><Thread-1><Worker 2 Mine one source (4 blocks) 106ms>
+<04/04/2022 17:33:42.195><Worker 3><Thread-2><Worker 3 Mine one block: 38ms>
+<04/04/2022 17:33:42.199><Worker 4><Thread-3><Worker 4 Mine one block: 37ms>
+<04/04/2022 17:33:42.199><Worker 4><Thread-3><Worker 4 Mine one source (3 blocks) 87ms>
+<04/04/2022 17:33:42.209><Worker 1><Thread-0><Worker 1 Mine one block: 10ms>
+<04/04/2022 17:33:42.222><Worker 1><Thread-0><Worker 1 Mine one block: 12ms>
+<04/04/2022 17:33:42.239><Worker 3><Thread-2><Worker 3 Mine one block: 43ms>
+<04/04/2022 17:33:42.239><Worker 3><Thread-2><Worker 3 Mine one source (3 blocks) 94ms>
+<04/04/2022 17:33:42.257><Worker 1><Thread-0><Worker 1 Mine one block: 34ms>
+<04/04/2022 17:33:42.257><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 56ms>
+<04/04/2022 17:33:42.275><Lorry 3><Thread-6><Lorry 3 is filled and heading for the ferry, Loading time: 126ms>
+<04/04/2022 17:33:42.296><Lorry 1><Thread-4><Lorry 1 has arrived at the ferry, Time of travel: 244ms>
+<04/04/2022 17:33:42.322><Worker 3><Thread-2><Worker 3 Mine one block: 13ms>
+<04/04/2022 17:33:42.327><Worker 4><Thread-3><Worker 4 Mine one block: 29ms>
+<04/04/2022 17:33:42.332><Worker 4><Thread-3><Worker 4 Mine one block: 3ms>
+<04/04/2022 17:33:42.345><Worker 3><Thread-2><Worker 3 Mine one block: 22ms>
+<04/04/2022 17:33:42.346><Worker 3><Thread-2><Worker 3 Mine one block: 1ms>
+<04/04/2022 17:33:42.367><Worker 2><Thread-1><Worker 2 Mine one block: 35ms>
+<04/04/2022 17:33:42.367><Worker 3><Thread-2><Worker 3 Mine one block: 20ms>
+<04/04/2022 17:33:42.368><Worker 3><Thread-2><Worker 3 Mine one source (4 blocks) 56ms>
+<04/04/2022 17:33:42.375><Worker 4><Thread-3><Worker 4 Mine one block: 42ms>
+<04/04/2022 17:33:42.380><Worker 1><Thread-0><Worker 1 Mine one block: 48ms>
+<04/04/2022 17:33:42.391><Worker 2><Thread-1><Worker 2 Mine one block: 22ms>
+<04/04/2022 17:33:42.408><Worker 2><Thread-1><Worker 2 Mine one block: 16ms>
+<04/04/2022 17:33:42.408><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 73ms>
+<04/04/2022 17:33:42.416><Worker 1><Thread-0><Worker 1 Mine one block: 36ms>
+<04/04/2022 17:33:42.425><Worker 4><Thread-3><Worker 4 Mine one block: 44ms>
+<04/04/2022 17:33:42.430><Lorry 4><Thread-7><Lorry 4 is filled and heading for the ferry, Loading time: 155ms>
+<04/04/2022 17:33:42.439><Worker 4><Thread-3><Worker 4 Mine one block: 12ms>
+<04/04/2022 17:33:42.439><Worker 4><Thread-3><Worker 4 Mine one source (5 blocks) 130ms>
+<04/04/2022 17:33:42.441><Worker 1><Thread-0><Worker 1 Mine one block: 23ms>
+<04/04/2022 17:33:42.441><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 107ms>
+<04/04/2022 17:33:42.468><Worker 3><Thread-2><Worker 3 Mine one block: 17ms>
+<04/04/2022 17:33:42.480><Lorry 4><Thread-7><Lorry 4 has arrived at the ferry, Time of travel: 49ms>
+<04/04/2022 17:33:42.483><Worker 3><Thread-2><Worker 3 Mine one block: 14ms>
+<04/04/2022 17:33:42.513><Worker 1><Thread-0><Worker 1 Mine one block: 4ms>
+<04/04/2022 17:33:42.517><Worker 3><Thread-2><Worker 3 Mine one block: 33ms>
+<04/04/2022 17:33:42.540><Worker 2><Thread-1><Worker 2 Mine one block: 28ms>
+<04/04/2022 17:33:42.555><Worker 1><Thread-0><Worker 1 Mine one block: 40ms>
+<04/04/2022 17:33:42.558><Worker 2><Thread-1><Worker 2 Mine one block: 16ms>
+<04/04/2022 17:33:42.560><Worker 3><Thread-2><Worker 3 Mine one block: 41ms>
+<04/04/2022 17:33:42.570><Worker 1><Thread-0><Worker 1 Mine one block: 14ms>
+<04/04/2022 17:33:42.572><Worker 3><Thread-2><Worker 3 Mine one block: 10ms>
+<04/04/2022 17:33:42.587><Worker 4><Thread-3><Worker 4 Mine one block: 45ms>
+<04/04/2022 17:33:42.587><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 45ms>
+<04/04/2022 17:33:42.587><Lorry 5><Thread-8><Lorry 5 is filled and heading for the ferry, Loading time: 159ms>
+<04/04/2022 17:33:42.592><Worker 1><Thread-0><Worker 1 Mine one block: 21ms>
+<04/04/2022 17:33:42.592><Worker 1><Thread-0><Worker 1 Mine one source (4 blocks) 79ms>
+<04/04/2022 17:33:42.595><Worker 3><Thread-2><Worker 3 Mine one block: 22ms>
+<04/04/2022 17:33:42.595><Worker 3><Thread-2><Worker 3 Mine one source (6 blocks) 137ms>
+<04/04/2022 17:33:42.616><Worker 2><Thread-1><Worker 2 Mine one block: 48ms>
+<04/04/2022 17:33:42.623><Worker 2><Thread-1><Worker 2 Mine one block: 6ms>
+<04/04/2022 17:33:42.624><Worker 2><Thread-1><Worker 2 Mine one source (4 blocks) 98ms>
+<04/04/2022 17:33:42.705><Lorry 6><Thread-9><Lorry 6 is filled and heading for the ferry, Loading time: 118ms>
+<04/04/2022 17:33:42.743><Worker 3><Thread-2><Worker 3 Mine one block: 4ms>
+<04/04/2022 17:33:42.762><Lorry 3><Thread-6><Lorry 3 has arrived at the ferry, Time of travel: 485ms>
+<04/04/2022 17:33:42.763><Worker 1><Thread-0><Worker 1 Mine one block: 2ms>
+<04/04/2022 17:33:42.768><Worker 1><Thread-0><Worker 1 Mine one block: 4ms>
+<04/04/2022 17:33:42.770><Worker 3><Thread-2><Worker 3 Mine one block: 26ms>
+<04/04/2022 17:33:42.770><Worker 3><Thread-2><Worker 3 Mine one source (2 blocks) 30ms>
+<04/04/2022 17:33:42.772><Worker 1><Thread-0><Worker 1 Mine one block: 4ms>
+<04/04/2022 17:33:42.772><Worker 4><Thread-3><Worker 4 Mine one block: 34ms>
+<04/04/2022 17:33:42.772><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 10ms>
+<04/04/2022 17:33:42.772><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 34ms>
+<04/04/2022 17:33:42.799><Worker 2><Thread-1><Worker 2 Mine one block: 39ms>
+<04/04/2022 17:33:42.802><Worker 2><Thread-1><Worker 2 Mine one block: 2ms>
+<04/04/2022 17:33:42.824><Lorry 7><Thread-10><Lorry 7 is filled and heading for the ferry, Loading time: 119ms>
+<04/04/2022 17:33:42.829><Worker 4><Thread-3><Worker 4 Mine one block: 15ms>
+<04/04/2022 17:33:42.838><Worker 2><Thread-1><Worker 2 Mine one block: 35ms>
+<04/04/2022 17:33:42.854><Worker 4><Thread-3><Worker 4 Mine one block: 24ms>
+<04/04/2022 17:33:42.861><Worker 1><Thread-0><Worker 1 Mine one block: 25ms>
+<04/04/2022 17:33:42.863><Worker 2><Thread-1><Worker 2 Mine one block: 24ms>
+<04/04/2022 17:33:42.863><Worker 2><Thread-1><Worker 2 Mine one source (4 blocks) 100ms>
+<04/04/2022 17:33:42.864><Worker 1><Thread-0><Worker 1 Mine one block: 3ms>
+<04/04/2022 17:33:42.864><Worker 1><Thread-0><Worker 1 Mine one source (2 blocks) 28ms>
+<04/04/2022 17:33:42.866><Worker 4><Thread-3><Worker 4 Mine one block: 11ms>
+<04/04/2022 17:33:42.866><Worker 4><Thread-3><Worker 4 Mine one source (3 blocks) 50ms>
+<04/04/2022 17:33:42.870><Lorry 6><Thread-9><Lorry 6 has arrived at the ferry, Time of travel: 164ms>
+<04/04/2022 17:33:42.874><Ferry 0><Thread-7><The ferry has started. It was waiting to be filled for: 1087ms>
+<04/04/2022 17:33:42.876><Worker 3><Thread-2><Worker 3 Mine one block: 40ms>
+<04/04/2022 17:33:42.882><Worker 3><Thread-2><Worker 3 Mine one block: 6ms>
+<04/04/2022 17:33:42.902><Lorry 7><Thread-10><Lorry 7 has arrived at the ferry, Time of travel: 77ms>
+<04/04/2022 17:33:42.913><Worker 3><Thread-2><Worker 3 Mine one block: 30ms>
+<04/04/2022 17:33:42.924><Lorry 2><Thread-5><Lorry 2 has arrived at the ferry, Time of travel: 773ms>
+<04/04/2022 17:33:42.935><Worker 1><Thread-0><Worker 1 Mine one block: 17ms>
+<04/04/2022 17:33:42.935><Worker 1><Thread-0><Worker 1 Mine one source (1 blocks) 17ms>
+<04/04/2022 17:33:42.963><Lorry 8><Thread-11><Lorry 8 is filled and heading for the ferry, Loading time: 139ms>
+<04/04/2022 17:33:42.965><Worker 3><Thread-2><Worker 3 Mine one block: 49ms>
+<04/04/2022 17:33:42.965><Worker 3><Thread-2><Worker 3 Mine one source (4 blocks) 125ms>
+<04/04/2022 17:33:43.004><Worker 1><Thread-0><Worker 1 Mine one block: 10ms>
+<04/04/2022 17:33:43.006><Worker 4><Thread-3><Worker 4 Mine one block: 12ms>
+<04/04/2022 17:33:43.006><Worker 2><Thread-1><Worker 2 Mine one block: 12ms>
+<04/04/2022 17:33:43.008><Worker 4><Thread-3><Worker 4 Mine one block: 2ms>
+<04/04/2022 17:33:43.009><Worker 4><Thread-3><Worker 4 Mine one source (2 blocks) 14ms>
+<04/04/2022 17:33:43.021><Worker 1><Thread-0><Worker 1 Mine one block: 16ms>
+<04/04/2022 17:33:43.034><Worker 2><Thread-1><Worker 2 Mine one block: 27ms>
+<04/04/2022 17:33:43.059><Worker 1><Thread-0><Worker 1 Mine one block: 38ms>
+<04/04/2022 17:33:43.061><Worker 4><Thread-3><Worker 4 Mine one block: 25ms>
+<04/04/2022 17:33:43.066><Worker 3><Thread-2><Worker 3 Mine one block: 40ms>
+<04/04/2022 17:33:43.071><Worker 4><Thread-3><Worker 4 Mine one block: 10ms>
+<04/04/2022 17:33:43.071><Worker 4><Thread-3><Worker 4 Mine one source (2 blocks) 35ms>
+<04/04/2022 17:33:43.076><Worker 2><Thread-1><Worker 2 Mine one block: 42ms>
+<04/04/2022 17:33:43.080><Worker 1><Thread-0><Worker 1 Mine one block: 21ms>
+<04/04/2022 17:33:43.094><Worker 3><Thread-2><Worker 3 Mine one block: 27ms>
+<04/04/2022 17:33:43.098><Worker 3><Thread-2><Worker 3 Mine one block: 4ms>
+<04/04/2022 17:33:43.101><Worker 2><Thread-1><Worker 2 Mine one block: 25ms>
+<04/04/2022 17:33:43.101><Worker 2><Thread-1><Worker 2 Mine one source (4 blocks) 106ms>
+<04/04/2022 17:33:43.111><Worker 4><Thread-3><Worker 4 Mine one block: 18ms>
+<04/04/2022 17:33:43.111><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 18ms>
+<04/04/2022 17:33:43.113><Lorry 9><Thread-12><Lorry 9 is filled and heading for the ferry, Loading time: 151ms>
+<04/04/2022 17:33:43.114><Worker 3><Thread-2><Worker 3 Mine one block: 15ms>
+<04/04/2022 17:33:43.115><Worker 3><Thread-2><Worker 3 Mine one source (4 blocks) 86ms>
+<04/04/2022 17:33:43.119><Worker 1><Thread-0><Worker 1 Mine one block: 38ms>
+<04/04/2022 17:33:43.150><Worker 1><Thread-0><Worker 1 Mine one block: 31ms>
+<04/04/2022 17:33:43.168><Worker 4><Thread-3><Worker 4 Mine one block: 13ms>
+<04/04/2022 17:33:43.168><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 13ms>
+<04/04/2022 17:33:43.170><Worker 1><Thread-0><Worker 1 Mine one block: 19ms>
+<04/04/2022 17:33:43.180><Worker 1><Thread-0><Worker 1 Mine one block: 10ms>
+<04/04/2022 17:33:43.185><Worker 1><Thread-0><Worker 1 Mine one block: 4ms>
+<04/04/2022 17:33:43.206><Lorry 5><Thread-8><Lorry 5 has arrived at the ferry, Time of travel: 617ms>
+<04/04/2022 17:33:43.209><Worker 3><Thread-2><Worker 3 Mine one block: 2ms>
+<04/04/2022 17:33:43.210><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 2ms>
+<04/04/2022 17:33:43.224><Worker 3><Thread-2><Worker 3 Mine one block: 4ms>
+<04/04/2022 17:33:43.227><Worker 3><Thread-2><Worker 3 Mine one block: 2ms>
+<04/04/2022 17:33:43.231><Worker 1><Thread-0><Worker 1 Mine one block: 45ms>
+<04/04/2022 17:33:43.233><Worker 2><Thread-1><Worker 2 Mine one block: 26ms>
+<04/04/2022 17:33:43.233><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 26ms>
+<04/04/2022 17:33:43.235><Lorry 10><Thread-13><Lorry 10 is filled and heading for the ferry, Loading time: 122ms>
+<04/04/2022 17:33:43.235><Worker 1><Thread-0><Worker 1 Mine one block: 3ms>
+<04/04/2022 17:33:43.241><Worker 4><Thread-3><Worker 4 Mine one block: 33ms>
+<04/04/2022 17:33:43.241><Worker 4><Thread-3><Worker 4 Mine one source (1 blocks) 33ms>
+<04/04/2022 17:33:43.242><Lorry 1><Thread-4><Lorry 1 arrived to its destination, Travel time from ferry: 371ms>
+<04/04/2022 17:33:43.253><Worker 3><Thread-2><Worker 3 Mine one block: 26ms>
+<04/04/2022 17:33:43.253><Worker 3><Thread-2><Worker 3 Mine one source (3 blocks) 32ms>
+<04/04/2022 17:33:43.256><Worker 1><Thread-0><Worker 1 Mine one block: 20ms>
+<04/04/2022 17:33:43.264><Worker 1><Thread-0><Worker 1 Mine one block: 8ms>
+<04/04/2022 17:33:43.264><Worker 1><Thread-0><Worker 1 Mine one source (13 blocks) 263ms>
+<04/04/2022 17:33:43.302><Worker 2><Thread-1><Worker 2 Mine one block: 46ms>
+<04/04/2022 17:33:43.302><Worker 2><Thread-1><Worker 2 Mine one source (1 blocks) 46ms>
+<04/04/2022 17:33:43.308><Worker 4><Thread-3><Worker 4 Mine one block: 42ms>
+<04/04/2022 17:33:43.335><Worker 2><Thread-1><Worker 2 Mine one block: 5ms>
+<04/04/2022 17:33:43.340><Lorry 11><Thread-14><Lorry 11 is filled and heading for the ferry, Loading time: 106ms>
+<04/04/2022 17:33:43.345><Worker 4><Thread-3><Worker 4 Mine one block: 36ms>
+<04/04/2022 17:33:43.349><Lorry 11><Thread-14><Lorry 11 has arrived at the ferry, Time of travel: 8ms>
+<04/04/2022 17:33:43.349><Ferry 1><Thread-5><The ferry has started. It was waiting to be filled for: 475ms>
+<04/04/2022 17:33:43.352><Worker 2><Thread-1><Worker 2 Mine one block: 16ms>
+<04/04/2022 17:33:43.367><Worker 3><Thread-2><Worker 3 Mine one block: 37ms>
+<04/04/2022 17:33:43.371><Worker 4><Thread-3><Worker 4 Mine one block: 25ms>
+<04/04/2022 17:33:43.379><Worker 4><Thread-3><Worker 4 Mine one block: 8ms>
+<04/04/2022 17:33:43.383><Lorry 5><Thread-8><Lorry 5 arrived to its destination, Travel time from ferry: 34ms>
+<04/04/2022 17:33:43.385><Worker 2><Thread-1><Worker 2 Mine one block: 33ms>
+<04/04/2022 17:33:43.385><Worker 2><Thread-1><Worker 2 Mine one source (3 blocks) 54ms>
+<04/04/2022 17:33:43.403><Worker 3><Thread-2><Worker 3 Mine one block: 35ms>
+<04/04/2022 17:33:43.403><Worker 3><Thread-2><Worker 3 Mine one source (2 blocks) 72ms>
+<04/04/2022 17:33:43.417><Lorry 4><Thread-7><Lorry 4 arrived to its destination, Travel time from ferry: 541ms>
+<04/04/2022 17:33:43.422><Worker 4><Thread-3><Worker 4 Mine one block: 42ms>
+<04/04/2022 17:33:43.436><Lorry 2><Thread-5><Lorry 2 arrived to its destination, Travel time from ferry: 86ms>
+<04/04/2022 17:33:43.436><Worker 4><Thread-3><Worker 4 Mine one block: 13ms>
+<04/04/2022 17:33:43.448><Lorry 12><Thread-15><Lorry 12 is filled and heading for the ferry, Loading time: 108ms>
+<04/04/2022 17:33:43.464><Worker 4><Thread-3><Worker 4 Mine one block: 27ms>
+<04/04/2022 17:33:43.479><Worker 3><Thread-2><Worker 3 Mine one block: 21ms>
+<04/04/2022 17:33:43.479><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 21ms>
+<04/04/2022 17:33:43.508><Worker 2><Thread-1><Worker 2 Mine one block: 30ms>
+<04/04/2022 17:33:43.510><Worker 1><Thread-0><Worker 1 Mine one block: 10ms>
+<04/04/2022 17:33:43.510><Worker 3><Thread-2><Worker 3 Mine one block: 9ms>
+<04/04/2022 17:33:43.510><Worker 4><Thread-3><Worker 4 Mine one block: 45ms>
+<04/04/2022 17:33:43.510><Worker 2><Thread-1><Worker 2 Mine one block: 1ms>
+<04/04/2022 17:33:43.510><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 9ms>
+<04/04/2022 17:33:43.510><Worker 4><Thread-3><Worker 4 Mine one source (8 blocks) 238ms>
+<04/04/2022 17:33:43.510><Worker 2><Thread-1><Worker 2 Mine one source (2 blocks) 31ms>
+<04/04/2022 17:33:43.533><Worker 1><Thread-0><Worker 1 Mine one block: 23ms>
+<04/04/2022 17:33:43.565><Lorry 13><Thread-16><Lorry 13 is filled and heading for the ferry, Loading time: 118ms>
+<04/04/2022 17:33:43.579><Worker 1><Thread-0><Worker 1 Mine one block: 45ms>
+<04/04/2022 17:33:43.579><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 78ms>
+<04/04/2022 17:33:43.594><Worker 3><Thread-2><Worker 3 Mine one block: 29ms>
+<04/04/2022 17:33:43.594><Worker 3><Thread-2><Worker 3 Mine one source (1 blocks) 29ms>
+<04/04/2022 17:33:43.599><Worker 2><Thread-1><Worker 2 Mine one block: 23ms>
+<04/04/2022 17:33:43.612><Lorry 6><Thread-9><Lorry 6 arrived to its destination, Travel time from ferry: 739ms>
+<04/04/2022 17:33:43.641><Lorry 10><Thread-13><Lorry 10 has arrived at the ferry, Time of travel: 406ms>
+<04/04/2022 17:33:43.648><Worker 2><Thread-1><Worker 2 Mine one block: 49ms>
+<04/04/2022 17:33:43.656><Worker 3><Thread-2><Worker 3 Mine one block: 38ms>
+<04/04/2022 17:33:43.666><Worker 1><Thread-0><Worker 1 Mine one block: 4ms>
+<04/04/2022 17:33:43.666><Worker 2><Thread-1><Worker 2 Mine one block: 16ms>
+<04/04/2022 17:33:43.681><Worker 2><Thread-1><Worker 2 Mine one block: 14ms>
+<04/04/2022 17:33:43.681><Worker 2><Thread-1><Worker 2 Mine one source (4 blocks) 102ms>
+<04/04/2022 17:33:43.682><Lorry 14><Thread-17><Lorry 14 is filled and heading for the ferry, Loading time: 117ms>
+<04/04/2022 17:33:43.690><Worker 4><Thread-3><Worker 4 Mine one block: 18ms>
+<04/04/2022 17:33:43.702><Worker 3><Thread-2><Worker 3 Mine one block: 45ms>
+<04/04/2022 17:33:43.704><Worker 4><Thread-3><Worker 4 Mine one block: 14ms>
+<04/04/2022 17:33:43.707><Worker 1><Thread-0><Worker 1 Mine one block: 40ms>
+<04/04/2022 17:33:43.733><Worker 3><Thread-2><Worker 3 Mine one block: 30ms>
+<04/04/2022 17:33:43.740><Worker 1><Thread-0><Worker 1 Mine one block: 32ms>
+<04/04/2022 17:33:43.740><Worker 1><Thread-0><Worker 1 Mine one source (3 blocks) 76ms>
+<04/04/2022 17:33:43.749><Worker 4><Thread-3><Worker 4 Mine one block: 44ms>
+<04/04/2022 17:33:43.769><Worker 3><Thread-2><Worker 3 Mine one block: 36ms>
+<04/04/2022 17:33:43.769><Worker 3><Thread-2><Worker 3 Mine one source (4 blocks) 149ms>
+<04/04/2022 17:33:43.771><Lorry 3><Thread-6><Lorry 3 arrived to its destination, Travel time from ferry: 900ms>
+<04/04/2022 17:33:43.779><Worker 4><Thread-3><Worker 4 Mine one block: 30ms>
+<04/04/2022 17:33:43.779><Worker 4><Thread-3><Worker 4 Mine one source (4 blocks) 106ms>
+<04/04/2022 17:33:43.781><Lorry 9><Thread-12><Lorry 9 has arrived at the ferry, Time of travel: 667ms>
+<04/04/2022 17:33:43.805><Lorry 15><Thread-18><Lorry 15 is filled and heading for the ferry, Loading time: 123ms>
+<04/04/2022 17:33:43.858><Lorry 16><Thread-19><Lorry 16 is filled and heading for the ferry, Loading time: 54ms>
+<04/04/2022 17:33:43.868><Lorry 8><Thread-11><Lorry 8 has arrived at the ferry, Time of travel: 904ms>
+<04/04/2022 17:33:43.975><Lorry 11><Thread-14><Lorry 11 arrived to its destination, Travel time from ferry: 626ms>
+<04/04/2022 17:33:44.010><Lorry 12><Thread-15><Lorry 12 has arrived at the ferry, Time of travel: 561ms>
+<04/04/2022 17:33:44.011><Ferry 2><Thread-12><The ferry has started. It was waiting to be filled for: 662ms>
+<04/04/2022 17:33:44.192><Lorry 16><Thread-19><Lorry 16 has arrived at the ferry, Time of travel: 333ms>
+<04/04/2022 17:33:44.249><Lorry 7><Thread-10><Lorry 7 arrived to its destination, Travel time from ferry: 899ms>
+<04/04/2022 17:33:44.270><Lorry 12><Thread-15><Lorry 12 arrived to its destination, Travel time from ferry: 260ms>
+<04/04/2022 17:33:44.307><Lorry 13><Thread-16><Lorry 13 has arrived at the ferry, Time of travel: 742ms>
+<04/04/2022 17:33:44.450><Lorry 8><Thread-11><Lorry 8 arrived to its destination, Travel time from ferry: 439ms>
+<04/04/2022 17:33:44.605><Lorry 14><Thread-17><Lorry 14 has arrived at the ferry, Time of travel: 923ms>
+<04/04/2022 17:33:44.641><Lorry 15><Thread-18><Lorry 15 has arrived at the ferry, Time of travel: 836ms>
+<04/04/2022 17:33:44.641><Ferry 3><Thread-16><The ferry has started. It was waiting to be filled for: 630ms>
+<04/04/2022 17:33:44.676><Lorry 9><Thread-12><Lorry 9 arrived to its destination, Travel time from ferry: 664ms>
+<04/04/2022 17:33:44.679><Lorry 16><Thread-19><Lorry 16 arrived to its destination, Travel time from ferry: 37ms>
+<04/04/2022 17:33:44.701><Lorry 13><Thread-16><Lorry 13 arrived to its destination, Travel time from ferry: 58ms>
+<04/04/2022 17:33:44.808><Lorry 10><Thread-13><Lorry 10 arrived to its destination, Travel time from ferry: 798ms>
+<04/04/2022 17:33:44.953><Lorry 14><Thread-17><Lorry 14 arrived to its destination, Travel time from ferry: 312ms>
+<04/04/2022 17:33:45.043><Lorry 15><Thread-18><Lorry 15 arrived to its destination, Travel time from ferry: 401ms>

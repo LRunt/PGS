@@ -17,6 +17,7 @@ public class Printer {
     private String fileName;
     /** Text which will be printed into the file*/
     private String output;
+    private final int BUFFER_SIZE = 10000;
 
     /**
      * Constructor of class {@Printer}
@@ -34,11 +35,7 @@ public class Printer {
      * @param description description of action
      */
     public void printAction(String description){
-        now = LocalDateTime.now();
-        String out = String.format("<%s><%s>\n", dtf.format(now), description);
-        System.out.printf(out);
-        output += out;
-        if(output.length() > 10000) writeToFile(fileName);
+        System.out.printf(String.format("%s\n", description));
     }
 
     /**
@@ -50,9 +47,9 @@ public class Printer {
     public void printAction(String role, String thread, String description){
         now = LocalDateTime.now();
         String out = String.format("<%s><%s><%s><%s>\n", dtf.format(now),role, thread, description);
-        System.out.printf(String.format("%s: %s\n", role, description));
+        System.out.printf(String.format("%s\n", description));
         output += out;
-        if(output.length() > 10000) writeToFile(fileName);
+        if(output.length() > BUFFER_SIZE) writeToFile(fileName);
     }
 
     /**

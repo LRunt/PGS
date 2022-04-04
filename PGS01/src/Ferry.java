@@ -65,7 +65,7 @@ public class Ferry {
         if(lorryOnBoard == 0){
             wait = true;
             farmer.getPrinter().printAction("Ferry " + numberOfFerry, Thread.currentThread().getName(), "The ferry has started. It was waiting to be filled for: " + (System.currentTimeMillis() - start) + "ms");
-            //System.out.println("Vlakno" + lorry.getName()+ " probouzi ostatni vlakna, predchozi inkarnaci bariery opustila vsechna vlakna.");
+            //System.out.println("The ferry has started to the other side of the shore. It was waiting to be filled for: " + (System.currentTimeMillis() - start) + "ms");
             notifyAll();
             start = System.currentTimeMillis();
             numberOfFerry++;

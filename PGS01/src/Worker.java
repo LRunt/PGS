@@ -12,8 +12,8 @@ public class Worker implements Runnable{
     private Farmer farmer;
     /** Maximal time of mining a block*/
     private int time;
-    /** Loading time of one block*/
-    private final int LOADING_TIME = 10;
+    /** Number of block the worker has mined already*/
+    private int blocksMined;
 
     /**
      * Constructor of class {@code Worker}
@@ -25,6 +25,7 @@ public class Worker implements Runnable{
         this.name = name;
         this.farmer = farmer;
         this.time = time;
+        this.blocksMined = 0;
     }
 
     /**
@@ -42,6 +43,7 @@ public class Worker implements Runnable{
                 totalTime += miningTime;
                 try {
                     Thread.sleep(miningTime);
+                    blocksMined++;
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -53,6 +55,7 @@ public class Worker implements Runnable{
             //Loading blocks
             for (int i = 0; i < actualSource.length(); i++) {
                 farmer.loadLorry();
+                farmer.getPrinter().printAction(this.name + " loaded 1 block into the " + farmer.getActualLorry().getName() + ". Actual occupancy of lorry: " +  farmer.getActualLoad() + " of " + farmer.getParameters().getCapLorry());
             }
         }
     }
@@ -72,4 +75,19 @@ public class Worker implements Runnable{
         return min + r.nextInt(max - min);
     }
 
+    /**
+     * Getter of blocksMined
+     * @return Number of block the worker has mined already
+     */
+    public int getBlocksMined() {
+        return blocksMined;
+    }
+
+    /**
+     * Getter of name
+     * @return name of worker
+     */
+    public String getName() {
+        return name;
+    }
 }

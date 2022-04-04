@@ -73,14 +73,14 @@ public class Lorry implements Runnable{
         int travelTime;
         loadingEnd = System.currentTimeMillis();
         //System.out.println("Lorry vyrazi");
-        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry is filled and heading for the ferry, Loading time: " + (loadingEnd - loadingStart) + "ms");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), this.name + " is filled and heading for the ferry, Loading time: " + (loadingEnd - loadingStart) + "ms");
         travelTime = generateRandomNumber(0, tLorry - 1);
         try {
             Thread.sleep(travelTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The truck has arrived at the ferry, Time of travel: " + travelTime + "ms");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), this.name + " has arrived at the ferry, Time of travel: " + travelTime + "ms");
         farmer.getDominik().transportLorry(this);
         //System.out.println("Lorry byl prevezen");
         travelTime = generateRandomNumber(0, tLorry);
@@ -90,7 +90,7 @@ public class Lorry implements Runnable{
             e.printStackTrace();
         }
         //System.out.println(this.name + "The lorry arrived at its destination, Travel time from ferry: ");
-        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry arrived at its destination, Travel time from ferry: " + travelTime + "ms");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), this.name + " arrived to its destination, Travel time from ferry: " + travelTime + "ms");
 
         farmer.getPrinter().writeToFile("output.txt");
     }
