@@ -1,4 +1,3 @@
-import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -129,7 +128,6 @@ public class Farmer implements Runnable{
             Worker newWorker = new Worker("Worker " + (i + 1), this, parameters.gettWorker());
             workers[i] = newWorker;
             workerThreads[i] = new Thread(newWorker);
-            //System.out.println("Worker " + (i + 1) + " was created.");
             workerThreads[i].start();
         }
 
@@ -177,12 +175,10 @@ public class Farmer implements Runnable{
      * @return the source of blocks in the mine
      */
     public synchronized String getSource(){
-        //System.out.println("zadam zdroj");
         String output;
         try{
             while(number < data.size()){
                 output = data.get(number);
-                //System.out.println("Přidělen zdroj " + (number + 1));
                 number++;
                 return output;
             }
@@ -197,20 +193,13 @@ public class Farmer implements Runnable{
      */
     public synchronized void loadLorry(){
         if(actualLoad < parameters.getCapLorry()){
-            //farmer.getPrinter().printAction( name + " Prazdno - Aktualni naplneni: " + load + " ze " + capLorry);
-
-            /*long startLoading = System.currentTimeMillis();
-            while(System.currentTimeMillis() - startLoading < LOADING_TIME){}*/
             actualLoad++;
             try{
                 Thread.sleep(LOADING_TIME);
             }catch(InterruptedException e){
                 e.printStackTrace();
             }
-            //System.out.println("Nalozeno: " + actualLoad);
-            //farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
         }else{
-            //System.out.println("Plno");
             Thread lorryThread = new Thread(actualLorry);
             lorryThreads[lorryNumber] = lorryThread;
             lorryNumber++;

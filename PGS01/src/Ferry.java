@@ -35,7 +35,6 @@ public class Ferry {
      */
     public synchronized void transportLorry(Lorry lorry){
         while(!wait){
-            //lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az ostatni vlakna opusti barieru");
             try{
                 wait();
             }catch(InterruptedException ex){
@@ -51,7 +50,6 @@ public class Ferry {
             notifyAll();
         }
         while(wait){
-            //lorry.getFarmer().getPrinter().printAction(lorry.getName() + "Musi pockat az privoz naplni");
             try{
                 wait();
             }catch(InterruptedException e){
@@ -65,7 +63,6 @@ public class Ferry {
         if(lorryOnBoard == 0){
             wait = true;
             farmer.getPrinter().printAction("Ferry " + numberOfFerry, Thread.currentThread().getName(), "The ferry has started. It was waiting to be filled for: " + (System.currentTimeMillis() - start) + "ms");
-            //System.out.println("The ferry has started to the other side of the shore. It was waiting to be filled for: " + (System.currentTimeMillis() - start) + "ms");
             notifyAll();
             start = System.currentTimeMillis();
             numberOfFerry++;
