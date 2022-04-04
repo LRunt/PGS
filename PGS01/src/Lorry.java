@@ -1,3 +1,5 @@
+import java.util.Random;
+
 /**
  * Class {@Lorry} truck that transports the loaded material to the other side of the river
  * @author Lukas Runt
@@ -47,14 +49,14 @@ public class Lorry implements Runnable{
     public synchronized void loadCargo(Worker worker){
         if(load < capLorry){
             //farmer.getPrinter().printAction( name + " Prazdno - Aktualni naplneni: " + load + " ze " + capLorry);
-            //long startLoading = System.currentTimeMillis();
-            //while(System.currentTimeMillis() - startLoading < LOADING_TIME){}
+            /*long startLoading = System.currentTimeMillis();
+            while(System.currentTimeMillis() - startLoading < LOADING_TIME){}*/
+            load++;
             /*try{
                 Thread.sleep(LOADING_TIME);
             }catch(InterruptedException e){
                 e.printStackTrace();
             }*/
-            load++;
             //farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
         }else{
             //farmer.getPrinter().printAction("Plno");
@@ -68,26 +70,44 @@ public class Lorry implements Runnable{
      */
     @Override
     public void run() {
+        int travelTime;
         loadingEnd = System.currentTimeMillis();
         //System.out.println("Lorry vyrazi");
         farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry is filled and heading for the ferry, Loading time: " + (loadingEnd - loadingStart) + "ms");
+        travelTime = generateRandomNumber(0, tLorry - 1);
         try {
-            Thread.sleep(tLorry);
+            Thread.sleep(travelTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The truck has arrived at the ferry, Time of travel: " + tLorry + "ms");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The truck has arrived at the ferry, Time of travel: " + travelTime + "ms");
         farmer.getDominik().transportLorry(this);
         //System.out.println("Lorry byl prevezen");
+        travelTime = generateRandomNumber(0, tLorry);
         try {
-            Thread.sleep(tLorry);
+            Thread.sleep(travelTime);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         //System.out.println("Lorry dojel na misto urceni");
-        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry arrived at its destination, Travel time from ferry: " + tLorry + "ms");
+        farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry arrived at its destination, Travel time from ferry: " + travelTime + "ms");
 
         farmer.getPrinter().writeToFile("output.txt");
+    }
+
+    /**
+     * Method generate random number
+     * @param min minimal possible number
+     * @param max maximal number
+     * @return random number in range
+     */
+    private int generateRandomNumber(int min, int max){
+        min++;
+        if(min >= max){
+            System.err.println("Error: minimum is bigger or same than maximum!");
+        }
+        Random r = new Random();
+        return min + r.nextInt(max - min);
     }
 
     /**
@@ -113,4 +133,5 @@ public class Lorry implements Runnable{
     public int getLoad() {
         return load;
     }
+
 }

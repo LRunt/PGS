@@ -33,6 +33,12 @@ public class Farmer implements Runnable{
     private Ferry dominik;
     /** Name of farmer*/
     private String name = "Farmer 1";
+    /** Actual load on lorry*/
+    private int actualLoad;
+    /** Loading time of one block*/
+    private final int LOADING_TIME = 10;
+    /** Thread of lorry*/
+    private Thread lorryThread;
 
     /**
      * Constructor of class {@code Farmer}
@@ -49,6 +55,8 @@ public class Farmer implements Runnable{
         data = prepareData(rowList);
         actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
         dominik = new Ferry(parameters.getCapFerry(), this);
+        //this.capLorry = parameters.getCapLorry();
+        this.actualLoad = 0;
     }
 
     /**
@@ -110,7 +118,7 @@ public class Farmer implements Runnable{
         for(int i = 0; i < parameters.getcWorker(); i++){
             Worker newWorker = new Worker("Worker " + (i + 1), this, parameters.gettWorker());
             workers[i] = new Thread(newWorker);
-            System.out.println("Worker " + (i + 1) + " was created.");
+            //System.out.println("Worker " + (i + 1) + " was created.");
             workers[i].start();
         }
 
@@ -124,11 +132,21 @@ public class Farmer implements Runnable{
         }
 
         //Sending the last lorry
-        if(actualLorry.getLoad() > 0){
+        /*if(actualLorry.getLoad() > 0){
+            sendLorry();
+        }*/
+        if(actualLoad > 0){
             sendLorry();
         }
 
         printer.writeToFile("output.txt");
+
+        try {
+            lorryThread.join();
+            printer.printAction("Simulation ended");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -152,10 +170,37 @@ public class Farmer implements Runnable{
     }
 
     /**
+     * Method loads lorry
+     */
+    public synchronized void loadLorry(){
+        if(actualLoad < parameters.getCapLorry()){
+            //farmer.getPrinter().printAction( name + " Prazdno - Aktualni naplneni: " + load + " ze " + capLorry);
+
+            /*long startLoading = System.currentTimeMillis();
+            while(System.currentTimeMillis() - startLoading < LOADING_TIME){}*/
+            actualLoad++;
+            try{
+                Thread.sleep(LOADING_TIME);
+            }catch(InterruptedException e){
+                e.printStackTrace();
+            }
+            System.out.println("Nalozeno: " + actualLoad);
+            //farmer.getPrinter().printAction( name + " Nalozeno - Aktualni naplneni: " + load + " ze " + capLorry);
+        }else{
+            System.out.println("Plno");
+            Thread lorryThread = new Thread(actualLorry);
+            lorryThread.start();
+            actualLoad = 0;
+            actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
+            loadLorry();
+        }
+    }
+
+    /**
      * Method send lorry to the ferry
      */
     public synchronized void sendLorry(){
-        Thread lorryThread = new Thread(actualLorry);
+        lorryThread = new Thread(actualLorry);
         lorryThread.start();
         actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
     }
@@ -188,7 +233,7 @@ public class Farmer implements Runnable{
      * Getter of lorry
      * @return a lorry that's being loaded
      */
-    public Lorry getActualLorry(){
+    public synchronized Lorry getActualLorry(){
         return actualLorry;
     }
 

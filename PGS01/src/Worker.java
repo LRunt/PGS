@@ -12,6 +12,8 @@ public class Worker implements Runnable{
     private Farmer farmer;
     /** Maximal time of mining a block*/
     private int time;
+    /** Loading time of one block*/
+    private final int LOADING_TIME = 10;
 
     /**
      * Constructor of class {@code Worker}
@@ -50,7 +52,7 @@ public class Worker implements Runnable{
             farmer.getPrinter().printAction(name + " Carries " + actualSource.length() + " blocks");
             //Loading blocks
             for (int i = 0; i < actualSource.length(); i++) {
-                farmer.getActualLorry().loadCargo(this);
+                farmer.loadLorry();
             }
         }
     }
