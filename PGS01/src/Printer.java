@@ -31,7 +31,7 @@ public class Printer {
 
     /**
      * Method prints action
-     * @param description
+     * @param description description of action
      */
     public void printAction(String description){
         now = LocalDateTime.now();
@@ -50,7 +50,7 @@ public class Printer {
     public void printAction(String role, String thread, String description){
         now = LocalDateTime.now();
         String out = String.format("<%s><%s><%s><%s>\n", dtf.format(now),role, thread, description);
-        System.out.printf(out);
+        System.out.printf(String.format("%s: %s\n", role, description));
         output += out;
         if(output.length() > 10000) writeToFile(fileName);
     }

@@ -89,7 +89,7 @@ public class Lorry implements Runnable{
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        //System.out.println("Lorry dojel na misto urceni");
+        //System.out.println(this.name + "The lorry arrived at its destination, Travel time from ferry: ");
         farmer.getPrinter().printAction(this.name, Thread.currentThread().getName(), "The lorry arrived at its destination, Travel time from ferry: " + travelTime + "ms");
 
         farmer.getPrinter().writeToFile("output.txt");

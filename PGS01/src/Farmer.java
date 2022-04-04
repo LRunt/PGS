@@ -38,7 +38,8 @@ public class Farmer implements Runnable{
     /** Loading time of one block*/
     private final int LOADING_TIME = 10;
     /** Thread of lorry*/
-    private Thread lorryThread;
+    private Thread[] lorryThreads;
+    int lorryNumber;
 
     /**
      * Constructor of class {@code Farmer}
@@ -57,6 +58,10 @@ public class Farmer implements Runnable{
         dominik = new Ferry(parameters.getCapFerry(), this);
         //this.capLorry = parameters.getCapLorry();
         this.actualLoad = 0;
+        this.lorryNumber = 0;
+        int numberOfLorry = (int)Math.ceil((double)numberOfBlocks/parameters.getCapLorry());
+        System.out.println(numberOfLorry);
+        lorryThreads = new Thread[numberOfLorry];
     }
 
     /**
@@ -142,11 +147,13 @@ public class Farmer implements Runnable{
         printer.writeToFile("output.txt");
 
         try {
-            lorryThread.join();
-            printer.printAction("Simulation ended");
+            for(int i = 0; i < lorryThreads.length; i++) {
+                lorryThreads[i].join();
+            }
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        printer.printAction("Simulation ended");
     }
 
     /**
@@ -189,6 +196,8 @@ public class Farmer implements Runnable{
         }else{
             System.out.println("Plno");
             Thread lorryThread = new Thread(actualLorry);
+            lorryThreads[lorryNumber] = lorryThread;
+            lorryNumber++;
             lorryThread.start();
             actualLoad = 0;
             actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
@@ -200,7 +209,9 @@ public class Farmer implements Runnable{
      * Method send lorry to the ferry
      */
     public synchronized void sendLorry(){
-        lorryThread = new Thread(actualLorry);
+        Thread lorryThread = new Thread(actualLorry);
+        lorryThreads[lorryNumber] = lorryThread;
+        lorryNumber++;
         lorryThread.start();
         actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
     }
