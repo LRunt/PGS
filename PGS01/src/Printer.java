@@ -6,7 +6,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * Class {@code Printer} represents a printer who prints to the console and to the file
  * @author Lukas Runt
- * @version 1.1 (02-04-2022)
+ * @version 1.2 (05-04-2022)
  */
 public class Printer {
     /** Time stamp format*/
@@ -17,6 +17,7 @@ public class Printer {
     private String fileName;
     /** Text which will be printed into the file*/
     private String output;
+    /** A number of characters after which the string is written to the file */
     private final int BUFFER_SIZE = 10000;
 
     /**
@@ -44,7 +45,7 @@ public class Printer {
      * @param thread name of thread
      * @param description description of action
      */
-    public void printAction(String role, String thread, String description){
+    public synchronized void printAction(String role, String thread, String description){
         now = LocalDateTime.now();
         String out = String.format("<%s><%s><%s><%s>\n", dtf.format(now),role, thread, description);
         System.out.printf(String.format("%s\n", description));

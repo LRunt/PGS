@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="PGS01:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/PGS01_jar</output-path>
+    <root id="archive" name="PGS01.jar">
+      <element id="module-output" name="PGS01" />
+    </root>
+  </artifact>
+</component>

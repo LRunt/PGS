@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * Class {@code Framer} represents a boss who gives instructions to workers
  * @author Lukas Runt
- * @version 1.0 (02-04-2022)
+ * @version 1.3 (05-04-2022)
  */
 public class Farmer implements Runnable{
     /** Path to the input file*/
@@ -59,7 +59,7 @@ public class Farmer implements Runnable{
         rowList = readFile(inputFile);
         data = prepareData(rowList);
         actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
-        dominik = new Ferry(parameters.getCapFerry(), this);
+        dominik = new Ferry(parameters.getCapFerry(), printer);
         this.actualLoad = 0;
         this.lorryNumber = 0;
         int numberOfLorry = (int)Math.ceil((double)numberOfBlocks/parameters.getCapLorry());
