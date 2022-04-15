@@ -12,3 +12,16 @@ class Farmer(Role):
         Role.__init__(self, name)
         self.numberOfBlocks = 0
         self.numberOfSources = 0
+
+    def processData(self, description):
+        """
+        Method precessing data and saves it to attributes
+        :param description: description of action
+        :return: if is action important than save value to attribute, method returns nothing
+        """
+        print(description)
+        words = description.split(" ")
+        if description.__contains__("blocks"):
+            self.numberOfBlocks = int(words[len(words) - 1])
+        elif description.__contains__("sources"):
+            self.numberOfSources = int(words[len(words) - 1])

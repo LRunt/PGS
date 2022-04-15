@@ -8,6 +8,7 @@ format of <vstupni soubor> is .txt generated from java program of simulation of 
 
 import sys
 import xml.etree.ElementTree as ET
+import xml.dom.minidom
 import datetime
 
 from Farmer import Farmer
@@ -15,27 +16,10 @@ from Ferry import Ferry
 from Lorry import Lorry
 from Worker import Worker
 
-
-def indent(elem, level=0):
-    """
-    Method manage visual of the xml file
-    copied from building xml tutorial
-    """
-    i = "\n" + level*"  "
-    j = "\n" + (level-1)*"  "
-    if len(elem):
-        if not elem.text or not elem.text.strip():
-            elem.text = i + "  "
-        if not elem.tail or not elem.tail.strip():
-            elem.tail = i
-        for subelem in elem:
-            indent(subelem, level+1)
-        if not elem.tail or not elem.tail.strip():
-            elem.tail = j
-    else:
-        if level and (not elem.tail or not elem.tail.strip()):
-            elem.tail = j
-    return elem
+TIME_INDEX = 0
+ROLE_INDEX = 1
+THREAD_INDEX = 2
+DESCRIPTION_INDEX = 3
 
 def readFile(fileName):
     """
@@ -77,7 +61,7 @@ def idetifyRoles(parsedData):
     roles = set()
     i = 0
     for x in parsedData:
-        roles.add(x[1])
+        roles.add(x[ROLE_INDEX])
     return roles
 
 def createInstances(roles):
@@ -106,8 +90,17 @@ def createInstances(roles):
     ferrys.sort(key=lambda x: x.name)
     return workers, lorrys, farmers, ferrys
 
-#def assignRowsToStaff():
-
+def assignRowsToStaff(parsedData, workers, lorrys, farmers, ferrys):
+    for line in parsedData:
+        role = line[ROLE_INDEX].split(" ")
+        if role[0].__contains__("Worker"):
+            workers.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])
+        elif role[0].__contains__("Lorry"):
+            lorrys.__getitem__(int(role[1]) - 1).printName()
+        elif role[0].__contains__("Farmer"):
+            farmers.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])
+        elif role[0].__contains__("Ferry"):
+            ferrys.__getitem__(int(role[1]) - 1).printName()
 
 def readTime(start, end):
     """
@@ -118,7 +111,7 @@ def readTime(start, end):
     """
     return datetime.datetime.strptime(end, "%d/%m/%Y %H:%M:%S.%f") - datetime.datetime.strptime(start, "%d/%m/%Y %H:%M:%S.%f")
 
-def writeXML(parsedData):
+def writeXML(parsedData, workers, lorrys, farmers, ferrys):
     """
     Method writes data to the XML file
     :param parsedData:
@@ -127,14 +120,25 @@ def writeXML(parsedData):
     timeOfSimulation = readTime(parsedData[0][0], parsedData[len(parsedData) - 1][0])
     timeOfSimulationString = str(timeOfSimulation)[:-3]
 
-    root = ET.Element('Simulation', {'duration': timeOfSimulationString})
-
     # root element
     root = ET.Element('Simulation', {'duration': timeOfSimulationString})
 
+    blocks = ET.SubElement(root, 'blockAverageDuration', {'totalCount':str(farmers[0].numberOfBlocks)})
+
+    blocks.text = str(10)
+
+    source = ET.SubElement(root, 'resourceAverageDuration', {'totalCount':str(farmers[0].numberOfSources)})
+
+    source.text = str(20)
+
     # write to file
-    tree = ET.ElementTree(indent(root))
-    tree.write(sys.argv[4], xml_declaration=True, encoding='utf-8')
+    #tree = ET.ElementTree(root)
+    #tree.write(sys.argv[4], xml_declaration=True, encoding='utf-8')
+    dom = xml.dom.minidom.parseString(ET.tostring(root))
+    xml_string = dom.toprettyxml()
+    f = open(sys.argv[4], "w")
+    f.write(xml_string)
+    f.close()
 
 if __name__ == '__main__':
     print('Argument List:', str(sys.argv))
@@ -146,4 +150,6 @@ if __name__ == '__main__':
 
     workers, lorrys, farmers, ferrys = createInstances(roles)
 
-    writeXML(parsedData)
+    assignRowsToStaff(parsedData, workers, lorrys, farmers, ferrys)
+
+    writeXML(parsedData, workers, lorrys, farmers, ferrys)

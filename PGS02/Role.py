@@ -8,3 +8,6 @@ class Role():
     def __init__(self, name):
         self.name = name
         self.activity = []
+
+    def printName(self):
+        a = 1

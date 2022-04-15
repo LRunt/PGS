@@ -15,3 +15,12 @@ class Worker(Role):
         self.numberOfMinedBlocks = 0
         self.numberOfMinedSources = 0
         self.timeOfMining = 0
+
+    def processData(self, description):
+        words = description.split(" ")
+        if description.__contains__("source"):
+            time = int(words[len(words) - 1][:-2])
+            self.numberOfMinedSources += 1
+            self.timeOfMining += time
+        elif description.__contains__("block"):
+            self.numberOfMinedBlocks += 1
