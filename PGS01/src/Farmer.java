@@ -116,6 +116,8 @@ public class Farmer implements Runnable{
         printer.printAction("Number of sources:\t\t" + numberOfSources);
         printer.printAction("Number od blocks:\t\t" + numberOfBlocks);
         printer.printAction("----------------------------------------\n\t\t\tSimulation\n----------------------------------------");
+        printer.printAction(this.name, Thread.currentThread().getName(), String.format("Total number of blocks in the mine: " + numberOfBlocks));
+        printer.printAction(this.name, Thread.currentThread().getName(), String.format("Total number of sources in the mine: " + numberOfSources));
     }
 
     /**
