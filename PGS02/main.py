@@ -100,7 +100,7 @@ def assignRowsToStaff(parsedData, workers, lorrys, farmers, ferrys):
         elif role[0].__contains__("Farmer"):
             farmers.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])
         elif role[0].__contains__("Ferry"):
-            ferrys.__getitem__(int(role[1]) - 1).printName()
+            ferrys.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])  
 
 def readTime(start, end):
     """
@@ -110,6 +110,17 @@ def readTime(start, end):
     :return: difference between start and end
     """
     return datetime.datetime.strptime(end, "%d/%m/%Y %H:%M:%S.%f") - datetime.datetime.strptime(start, "%d/%m/%Y %H:%M:%S.%f")
+
+def averageFerryWaitTime(ferrys):
+    """
+    Method counts average wait time of ferry
+    :param ferrys: all records of ferry transport
+    :return: average waiting time of ferry
+    """
+    totalTime = 0
+    for ferry in ferrys:
+        totalTime += ferry.waitTime
+    return float(totalTime)/len(ferrys)
 
 def writeXML(parsedData, workers, lorrys, farmers, ferrys):
     """
@@ -130,6 +141,10 @@ def writeXML(parsedData, workers, lorrys, farmers, ferrys):
     source = ET.SubElement(root, 'resourceAverageDuration', {'totalCount':str(farmers[0].numberOfSources)})
 
     source.text = str(20)
+
+    timeFerry = averageFerryWaitTime(ferrys)
+    print(timeFerry)
+    avgFerry = ET.SubElement(root, 'ferryAverageWait', {'trips':str(len(ferrys))}).text = "{:.2f}".format(timeFerry)
 
     # write to file
     #tree = ET.ElementTree(root)
