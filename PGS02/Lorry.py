@@ -8,7 +8,8 @@ class Lorry(Role):
     Class represents lorry(truck) which transport mined blocks to other side of river
     Attributes:
     timeOfFilling - total time of filling of the truck
-    timeOfDriving - total time of transporting block from point A to point B
+    StartTransportTimeStamp - start of transport block from point A to point B
+    EndTransportTimeStamp - end of transport block from point A to point B
     """
 
     def __init__(self, name):
@@ -18,6 +19,11 @@ class Lorry(Role):
         self.EndTransportTimeStamp = datetime.datetime.now()
 
     def processData(self, description, timeStamp):
+        """
+        Method precessing data and saves it to attributes
+        if is action important than save value to attribute, else method saves nothing
+        :param description: description of action
+        """
         words = description.split(" ")
         if description.__contains__("fill"):
             time = int(words[len(words) - 1][:-2])

@@ -17,6 +17,11 @@ class Worker(Role):
         self.timeOfMining = 0
 
     def processData(self, description):
+        """
+        Method precessing data and saves it to attributes
+        if is action important than save value to attribute, else method saves nothing
+        :param description: description of action
+        """
         words = description.split(" ")
         if description.__contains__("source"):
             time = int(words[len(words) - 1][:-2])

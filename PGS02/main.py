@@ -204,6 +204,7 @@ def generateXML(parsedData, workers, lorrys, farmers, ferrys):
         transportTime = differenceOfTimeStampsMS(lorrys[i].StartTransportTimeStamp, lorrys[i].EndTransportTimeStamp)
         ET.SubElement(lorry, 'transportTime').text = str(int(transportTime))
 
+    #Building a xml
     dom = xml.dom.minidom.parseString(ET.tostring(root))
     return dom.toprettyxml()
 
