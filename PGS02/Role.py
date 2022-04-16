@@ -10,4 +10,4 @@ class Role():
         self.activity = []
 
     def printName(self):
-        a = 1
+        print(self.name)

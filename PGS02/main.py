@@ -101,25 +101,46 @@ def createInstances(roles):
     return workers, lorrys, farmers, ferrys
 
 def assignRowsToStaff(parsedData, workers, lorrys, farmers, ferrys):
+    """
+    Method assigns the data to the corresponding instance and instance will take over the important data
+    :param parsedData: two-dimensional array of parsed data
+    :param workers: array of instances of workers
+    :param lorrys: array of instances of lorrys
+    :param farmers: array of instances of farmers
+    :param ferrys: array of instances of ferrys
+    """
     for line in parsedData:
         role = line[ROLE_INDEX].split(" ")
         if role[0].__contains__("Worker"):
             workers.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])
         elif role[0].__contains__("Lorry"):
-            lorrys.__getitem__(int(role[1]) - 1).printName()
+            lorrys.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX], line[TIME_INDEX])
         elif role[0].__contains__("Farmer"):
             farmers.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])
         elif role[0].__contains__("Ferry"):
             ferrys.__getitem__(int(role[1]) - 1).processData(line[DESCRIPTION_INDEX])  
 
-def readTime(start, end):
+def differenceOfTimeStamps(start, end):
     """
     Method compute difference between two times
     :param start: start of the time interval
     :param end: end of the time interval
-    :return: difference between start and end
+    :return: difference between start and end in datetime format
     """
     return datetime.datetime.strptime(end, "%d/%m/%Y %H:%M:%S.%f") - datetime.datetime.strptime(start, "%d/%m/%Y %H:%M:%S.%f")
+
+def differenceOfTimeStampsMS(start, end):
+    """
+    Method compute difference between two times
+    :param start: star of the time interval
+    :param end: end of the time interval
+    :return: difference between start and end in milliseconds (integer)
+    """
+    startTimeStamp = datetime.datetime.strptime(start,'%d/%m/%Y %H:%M:%S.%f')
+    endTimeStamp = datetime.datetime.strptime(end,'%d/%m/%Y %H:%M:%S.%f')
+    startMillisec = startTimeStamp.timestamp() * 1000
+    endMillisec = endTimeStamp.timestamp() * 1000
+    return endMillisec - startMillisec
 
 def averageTimeofMining(workers):
     """
@@ -156,7 +177,7 @@ def generateXML(parsedData, workers, lorrys, farmers, ferrys):
     :param parsedData:
     :return: string of generated XML
     """
-    timeOfSimulation = readTime(parsedData[0][0], parsedData[len(parsedData) - 1][0])
+    timeOfSimulation = differenceOfTimeStamps(parsedData[0][0], parsedData[len(parsedData) - 1][0])
     timeOfSimulationString = str(timeOfSimulation)[:-3]
 
     # root element - time of simulation
@@ -174,11 +195,14 @@ def generateXML(parsedData, workers, lorrys, farmers, ferrys):
     for i in range(len(workers)):
         worker = ET.SubElement(workersElement, 'Worker', {'id':str(i)})
         ET.SubElement(worker, 'resources').text = str(workers[i].numberOfMinedBlocks)
-        ET.SubElement(worker, 'workDuration').text = str(workers[i].timeOfMining)
+        ET.SubElement(worker, 'workDuration').text = str(workers[i].timeOfMining)# + "ms"
     # Lorrys
     vehicleElement = ET.SubElement(root, 'Vehicles')
     for i in range(len(lorrys)):
         lorry = ET.SubElement(vehicleElement, 'Vehicle', {'id': str(i)})
+        ET.SubElement(lorry, 'loadTime').text = str(lorrys[i].timeOfFilling)
+        transportTime = differenceOfTimeStampsMS(lorrys[i].StartTransportTimeStamp, lorrys[i].EndTransportTimeStamp)
+        ET.SubElement(lorry, 'transportTime').text = str(int(transportTime))
 
     dom = xml.dom.minidom.parseString(ET.tostring(root))
     return dom.toprettyxml()

@@ -16,8 +16,8 @@ class Farmer(Role):
     def processData(self, description):
         """
         Method precessing data and saves it to attributes
+        if is action important than save value to attribute, else method saves nothing
         :param description: description of action
-        :return: if is action important than save value to attribute, method returns nothing
         """
         print(description)
         words = description.split(" ")
