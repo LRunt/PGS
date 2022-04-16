@@ -32,6 +32,16 @@ def readFile(fileName):
     f.close()
     return data
 
+def writeFile(fileName, fileData):
+    """
+    Method prints data ito the file
+    :param fileName: name of file where the data is printed
+    :param fileData: data what will be printed to the file
+    """
+    f = open(fileName, "w")
+    f.write(fileData)
+    f.close()
+
 def parseData(data):
     """
     Method parse data and returns two-dimensional array
@@ -111,6 +121,24 @@ def readTime(start, end):
     """
     return datetime.datetime.strptime(end, "%d/%m/%Y %H:%M:%S.%f") - datetime.datetime.strptime(start, "%d/%m/%Y %H:%M:%S.%f")
 
+def averageTimeofMining(workers):
+    """
+    Method compute average time of mining one block and source
+    :param workers: workers who was working in the mine
+    :return: average time of mining one block, average time of mining one source, count of mined blocks, count of mined sources
+    """
+    minedBlocks = 0
+    minedSources = 0
+    totalTime = 0
+    for worker in workers:
+        minedBlocks += worker.numberOfMinedBlocks
+        minedSources += worker.numberOfMinedSources
+        totalTime += worker.timeOfMining
+
+    averageMiningOneBlock = float(totalTime)/minedBlocks
+    averageMiningOneSource = float(totalTime)/minedSources
+    return averageMiningOneBlock, averageMiningOneSource, minedBlocks, minedSources
+
 def averageFerryWaitTime(ferrys):
     """
     Method counts average wait time of ferry
@@ -122,38 +150,38 @@ def averageFerryWaitTime(ferrys):
         totalTime += ferry.waitTime
     return float(totalTime)/len(ferrys)
 
-def writeXML(parsedData, workers, lorrys, farmers, ferrys):
+def generateXML(parsedData, workers, lorrys, farmers, ferrys):
     """
-    Method writes data to the XML file
+    Method generates data of the XML data
     :param parsedData:
-    :return:
+    :return: string of generated XML
     """
     timeOfSimulation = readTime(parsedData[0][0], parsedData[len(parsedData) - 1][0])
     timeOfSimulationString = str(timeOfSimulation)[:-3]
 
-    # root element
+    # root element - time of simulation
     root = ET.Element('Simulation', {'duration': timeOfSimulationString})
+    # acquisition of data
+    averageMiningOneBlock, averageMiningOneSource, minedBlocks, minedSources = averageTimeofMining(workers)
+    # Average time of mining one block
+    ET.SubElement(root, 'blockAverageDuration', {'totalCount':str(minedBlocks)}).text = "{:.2f}".format(averageMiningOneBlock)
+    # Average time of mining one source
+    ET.SubElement(root, 'resourceAverageDuration', {'totalCount':str(minedSources)}).text = "{:.2f}".format(averageMiningOneSource)
+    # Average time of ferry waiting for 4 lorrys
+    ET.SubElement(root, 'ferryAverageWait', {'trips':str(len(ferrys))}).text = "{:.2f}".format(averageFerryWaitTime(ferrys))
+    #Workers
+    workersElement = ET.SubElement(root, 'Workers')
+    for i in range(len(workers)):
+        worker = ET.SubElement(workersElement, 'Worker', {'id':str(i)})
+        ET.SubElement(worker, 'resources').text = str(workers[i].numberOfMinedBlocks)
+        ET.SubElement(worker, 'workDuration').text = str(workers[i].timeOfMining)
+    # Lorrys
+    vehicleElement = ET.SubElement(root, 'Vehicles')
+    for i in range(len(lorrys)):
+        lorry = ET.SubElement(vehicleElement, 'Vehicle', {'id': str(i)})
 
-    blocks = ET.SubElement(root, 'blockAverageDuration', {'totalCount':str(farmers[0].numberOfBlocks)})
-
-    blocks.text = str(10)
-
-    source = ET.SubElement(root, 'resourceAverageDuration', {'totalCount':str(farmers[0].numberOfSources)})
-
-    source.text = str(20)
-
-    timeFerry = averageFerryWaitTime(ferrys)
-    print(timeFerry)
-    avgFerry = ET.SubElement(root, 'ferryAverageWait', {'trips':str(len(ferrys))}).text = "{:.2f}".format(timeFerry)
-
-    # write to file
-    #tree = ET.ElementTree(root)
-    #tree.write(sys.argv[4], xml_declaration=True, encoding='utf-8')
     dom = xml.dom.minidom.parseString(ET.tostring(root))
-    xml_string = dom.toprettyxml()
-    f = open(sys.argv[4], "w")
-    f.write(xml_string)
-    f.close()
+    return dom.toprettyxml()
 
 if __name__ == '__main__':
     print('Argument List:', str(sys.argv))
@@ -167,4 +195,6 @@ if __name__ == '__main__':
 
     assignRowsToStaff(parsedData, workers, lorrys, farmers, ferrys)
 
-    writeXML(parsedData, workers, lorrys, farmers, ferrys)
+    xmlData = generateXML(parsedData, workers, lorrys, farmers, ferrys)
+
+    writeFile(sys.argv[4], xmlData)
