@@ -21,6 +21,11 @@ public class Lorry implements Runnable{
     private long loadingEnd;
     /** Number of existing lorrys*/
     private static int number = 0;
+    /** Actual load of lorry*/
+    private int actualLoad;
+    /** Loading time of one block*/
+    private final int LOADING_TIME = 10;
+    private boolean active;
 
     /**
      * Constructor of {@code Lorry}
@@ -35,6 +40,35 @@ public class Lorry implements Runnable{
         name = "Lorry " + number;
         this.tLorry = tLorry;
         this.loadingStart = System.currentTimeMillis();
+        this.actualLoad = 0;
+        active = true;
+    }
+
+    /**
+     *
+     */
+    public synchronized void loadLorry(Lorry[] lorrys, Thread[] lorryThreads, Worker worker){
+        if(active){
+            if(actualLoad < capLorry){
+                actualLoad++;
+                System.out.println(worker + " loaded 1 block into the " + this + ". Actual occupancy of lorry: " +  actualLoad + " of " + capLorry);
+                try{
+                    Thread.sleep(LOADING_TIME);
+                }catch(InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                Thread lorryThread = new Thread(this);
+                lorryThreads[number] = lorryThread;
+                lorryThread.start();
+                active = false;
+                number++;
+                lorrys[number].loadLorry(lorrys, lorryThreads, worker);
+            }
+        }else{
+            lorrys[number].loadLorry(lorrys, lorryThreads, worker);
+        }
+
     }
 
     /**
@@ -87,4 +121,52 @@ public class Lorry implements Runnable{
         return name;
     }
 
+    /**
+     * Getter of actualLoad
+     * @return actual load
+     */
+    public int getActualLoad() {
+        return actualLoad;
+    }
+
+    /**
+     * Getter of capacity of lorry
+     * @return capacity of lorry
+     */
+    public int getCapLorry() {
+        return capLorry;
+    }
+
+    /**
+     * Getter of loading time
+     * @return loading time of one block
+     */
+    public int getLOADING_TIME() {
+        return LOADING_TIME;
+    }
+
+    /**
+     * setter of actual load
+     * @param actualLoad
+     */
+    public void setActualLoad(int actualLoad) {
+        this.actualLoad = actualLoad;
+    }
+
+    /**
+     * Getter of number of lorrys
+     * @return number of lorry
+     */
+    public static int getNumber() {
+        return number;
+    }
+
+    public static void setNumber(int number) {
+        Lorry.number = number;
+    }
+
+    @Override
+    public String toString() {
+        return name;
+    }
 }

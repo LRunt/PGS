@@ -209,7 +209,8 @@ def generateXML(parsedData, workers, lorrys, farmers, ferrys):
     return dom.toprettyxml()
 
 if __name__ == '__main__':
-    print('Argument List:', str(sys.argv))
+
+    print("program has started - xml file is creating")
 
     data = readFile(sys.argv[2])
     parsedData = parseData(data)
@@ -223,3 +224,5 @@ if __name__ == '__main__':
     xmlData = generateXML(parsedData, workers, lorrys, farmers, ferrys)
 
     writeFile(sys.argv[4], xmlData)
+
+    print("xml file was created - program ends")

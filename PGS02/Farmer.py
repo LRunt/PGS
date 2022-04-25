@@ -19,7 +19,6 @@ class Farmer(Role):
         if is action important than save value to attribute, else method saves nothing
         :param description: description of action
         """
-        print(description)
         words = description.split(" ")
         if description.__contains__("blocks"):
             self.numberOfBlocks = int(words[len(words) - 1])

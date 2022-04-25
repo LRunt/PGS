@@ -54,8 +54,7 @@ public class Worker implements Runnable{
             farmer.getPrinter().printAction(name + " Carries " + actualSource.length() + " blocks");
             //Loading blocks
             for (int i = 0; i < actualSource.length(); i++) {
-                farmer.loadLorry();
-                farmer.getPrinter().printAction(this.name + " loaded 1 block into the " + farmer.getActualLorry().getName() + ". Actual occupancy of lorry: " +  farmer.getActualLoad() + " of " + farmer.getParameters().getCapLorry());
+                farmer.getLorrys()[Lorry.getNumber()].loadLorry(farmer.getLorrys(), farmer.getLorryThreads(), this);
             }
         }
     }
@@ -88,6 +87,11 @@ public class Worker implements Runnable{
      * @return name of worker
      */
     public String getName() {
+        return name;
+    }
+
+    @Override
+    public String toString() {
         return name;
     }
 }

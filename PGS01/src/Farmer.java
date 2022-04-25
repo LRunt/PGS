@@ -1,3 +1,4 @@
+import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -34,21 +35,17 @@ public class Farmer implements Runnable{
     /** Ferry which transport lorrys to the other side of river*/
     private Ferry dominik;
     /** Name of farmer*/
-    private String name = "Farmer 1";
-    /** Actual load on lorry*/
-    private int actualLoad;
-    /** Loading time of one block*/
-    private final int LOADING_TIME = 10;
+    private String name;
     /** Thread of lorry*/
     private Thread[] lorryThreads;
-    /** Number of required lorrys*/
-    int lorryNumber;
+    private Lorry[] lorrys;
+    private int numberOfLorrys;
 
     /**
      * Constructor of class {@code Farmer}
      * @param parameters Parameters of simulation
      */
-    public Farmer(InputParameters parameters){
+    public Farmer(InputParameters parameters, String name){
         this.inputFile = parameters.getInputFile();
         this.parameters = parameters;
         numberOfBlocks = 0;
@@ -58,12 +55,21 @@ public class Farmer implements Runnable{
         workerThreads = new Thread[parameters.getcWorker()];
         rowList = readFile(inputFile);
         data = prepareData(rowList);
-        actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
         dominik = new Ferry(parameters.getCapFerry(), printer);
-        this.actualLoad = 0;
-        this.lorryNumber = 0;
         int numberOfLorry = (int)Math.ceil((double)numberOfBlocks/parameters.getCapLorry());
         lorryThreads = new Thread[numberOfLorry];
+        this.lorrys = new Lorry[numberOfLorry];
+        lorrys[0] = actualLorry;
+        this.numberOfLorrys = 1;
+        this.name = name;
+        createLorrys();
+    }
+
+    private void createLorrys(){
+        for(int i = 0; i < lorrys.length; i++){
+            lorrys[i] = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
+        }
+        Lorry.setNumber(0);
     }
 
     /**
@@ -143,13 +149,13 @@ public class Farmer implements Runnable{
         }
 
         //Sending the last lorry
-        if(actualLoad > 0){
-            sendLorry();
+        if(lorrys[Lorry.getNumber()].getActualLoad() > 0){
+            sendLastLorry();
         }
 
         printer.writeToFile("output.txt");
 
-        try {
+       try {
             for(int i = 0; i < lorryThreads.length; i++) {
                 lorryThreads[i].join();
             }
@@ -167,7 +173,7 @@ public class Farmer implements Runnable{
 
         printer.printAction("A " + sumOfMidedBlocks + " has been mined in total.");
 
-        printer.printAction("A " + ((lorryNumber - 1) * parameters.getCapLorry() + actualLoad) + " has been transported.");
+        //printer.printAction("A " + (actualLorry.getNumber() * parameters.getCapLorry() + actualLorry.getActualLoad()) + " has been transported.");
 
         printer.printAction("----------------------------------------\n\t\t\tSimulation ended\n----------------------------------------");
     }
@@ -191,36 +197,12 @@ public class Farmer implements Runnable{
     }
 
     /**
-     * Method loads lorry
-     */
-    public synchronized void loadLorry(){
-        if(actualLoad < parameters.getCapLorry()){
-            actualLoad++;
-            try{
-                Thread.sleep(LOADING_TIME);
-            }catch(InterruptedException e){
-                e.printStackTrace();
-            }
-        }else{
-            Thread lorryThread = new Thread(actualLorry);
-            lorryThreads[lorryNumber] = lorryThread;
-            lorryNumber++;
-            lorryThread.start();
-            actualLoad = 0;
-            actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
-            loadLorry();
-        }
-    }
-
-    /**
      * Method send lorry to the ferry
      */
-    public synchronized void sendLorry(){
-        Thread lorryThread = new Thread(actualLorry);
-        lorryThreads[lorryNumber] = lorryThread;
-        lorryNumber++;
+    public synchronized void sendLastLorry(){
+        Thread lorryThread = new Thread(lorrys[Lorry.getNumber()]);
+        lorryThreads[Lorry.getNumber()] = lorryThread;
         lorryThread.start();
-        actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
     }
 
     /**
@@ -251,7 +233,7 @@ public class Farmer implements Runnable{
      * Getter of lorry
      * @return a lorry that's being loaded
      */
-    public synchronized Lorry getActualLorry(){
+    public Lorry getActualLorry(){
         return actualLorry;
     }
 
@@ -264,18 +246,30 @@ public class Farmer implements Runnable{
     }
 
     /**
-     * Getter of actual load of lorry
-     * @return actual load
-     */
-    public int getActualLoad() {
-        return actualLoad;
-    }
-
-    /**
      * Getter of parameters
      * @return parameters
      */
     public InputParameters getParameters(){
        return parameters;
+    }
+
+    /**
+     * Setter of actual lorry
+     * @param actualLorry
+     */
+    public synchronized void setActualLorry(Lorry actualLorry) {
+        this.actualLorry = actualLorry;
+    }
+
+    /**
+     * Getter of lorryThread
+     * @return lorryThread
+     */
+    public synchronized Thread[] getLorryThreads() {
+        return lorryThreads;
+    }
+
+    public Lorry[] getLorrys() {
+        return lorrys;
     }
 }
