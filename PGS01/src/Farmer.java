@@ -1,4 +1,3 @@
-import java.lang.reflect.Parameter;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -7,7 +6,7 @@ import java.util.List;
 /**
  * Class {@code Framer} represents a boss who gives instructions to workers
  * @author Lukas Runt
- * @version 1.3 (05-04-2022)
+ * @version 2.0 (27-04-2022)
  */
 public class Farmer implements Runnable{
     /** Path to the input file*/
@@ -38,8 +37,8 @@ public class Farmer implements Runnable{
     private String name;
     /** Thread of lorry*/
     private Thread[] lorryThreads;
+    /** Array of all lorrys*/
     private Lorry[] lorrys;
-    private int numberOfLorrys;
 
     /**
      * Constructor of class {@code Farmer}
@@ -58,18 +57,10 @@ public class Farmer implements Runnable{
         dominik = new Ferry(parameters.getCapFerry(), printer);
         int numberOfLorry = (int)Math.ceil((double)numberOfBlocks/parameters.getCapLorry());
         lorryThreads = new Thread[numberOfLorry];
+        this.actualLorry = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
         this.lorrys = new Lorry[numberOfLorry];
         lorrys[0] = actualLorry;
-        this.numberOfLorrys = 1;
         this.name = name;
-        createLorrys();
-    }
-
-    private void createLorrys(){
-        for(int i = 0; i < lorrys.length; i++){
-            lorrys[i] = new Lorry(parameters.getCapLorry(), parameters.gettLorry(), this);
-        }
-        Lorry.setNumber(0);
     }
 
     /**
@@ -149,13 +140,14 @@ public class Farmer implements Runnable{
         }
 
         //Sending the last lorry
-        if(lorrys[Lorry.getNumber()].getActualLoad() > 0){
+        if(lorrys[Lorry.getNumber() - 1].getActualLoad() > 0){
             sendLastLorry();
         }
 
         printer.writeToFile("output.txt");
 
-       try {
+        //Waiting for all lorry threads
+        try {
             for(int i = 0; i < lorryThreads.length; i++) {
                 lorryThreads[i].join();
             }
@@ -173,7 +165,12 @@ public class Farmer implements Runnable{
 
         printer.printAction("A " + sumOfMidedBlocks + " has been mined in total.");
 
-        //printer.printAction("A " + (actualLorry.getNumber() * parameters.getCapLorry() + actualLorry.getActualLoad()) + " has been transported.");
+        //counting transported load
+        int transportedLoad = 0;
+        for(int i = 0; i < lorrys.length; i++){
+            transportedLoad += lorrys[i].getActualLoad();
+        }
+        printer.printAction("A " + transportedLoad + " has been transported.");
 
         printer.printAction("----------------------------------------\n\t\t\tSimulation ended\n----------------------------------------");
     }
@@ -200,8 +197,8 @@ public class Farmer implements Runnable{
      * Method send lorry to the ferry
      */
     public synchronized void sendLastLorry(){
-        Thread lorryThread = new Thread(lorrys[Lorry.getNumber()]);
-        lorryThreads[Lorry.getNumber()] = lorryThread;
+        Thread lorryThread = new Thread(lorrys[Lorry.getNumber() - 1]);
+        lorryThreads[Lorry.getNumber() - 1] = lorryThread;
         lorryThread.start();
     }
 
@@ -246,14 +243,6 @@ public class Farmer implements Runnable{
     }
 
     /**
-     * Getter of parameters
-     * @return parameters
-     */
-    public InputParameters getParameters(){
-       return parameters;
-    }
-
-    /**
      * Setter of actual lorry
      * @param actualLorry
      */
@@ -269,7 +258,15 @@ public class Farmer implements Runnable{
         return lorryThreads;
     }
 
+    /**
+     * Getter of array of lorrys
+     * @return lorrys
+     */
     public Lorry[] getLorrys() {
         return lorrys;
+    }
+
+    public InputParameters getParameters() {
+        return parameters;
     }
 }

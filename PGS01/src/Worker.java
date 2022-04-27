@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * The class {@Worker} represents a worker who mines a block in mine
  * @author Lukas Runt
- * @version 1.2 (02-04-2022)
+ * @version 2.0 (27-04-2022)
  */
 public class Worker implements Runnable{
     /** Name of worker*/
@@ -54,7 +54,7 @@ public class Worker implements Runnable{
             farmer.getPrinter().printAction(name + " Carries " + actualSource.length() + " blocks");
             //Loading blocks
             for (int i = 0; i < actualSource.length(); i++) {
-                farmer.getLorrys()[Lorry.getNumber()].loadLorry(farmer.getLorrys(), farmer.getLorryThreads(), this);
+                farmer.getActualLorry().loadLorry(farmer.getLorrys(), farmer.getLorryThreads(), this);
             }
         }
     }
@@ -90,6 +90,10 @@ public class Worker implements Runnable{
         return name;
     }
 
+    /**
+     * Text representation of instance Worker
+     * @return text representation of instance
+     */
     @Override
     public String toString() {
         return name;

@@ -3,7 +3,7 @@ import java.util.Random;
 /**
  * Class {@Lorry} truck that transports the loaded material to the other side of the river
  * @author Lukas Runt
- * @version 1.1 (05-04-2022)
+ * @version 2.0 (27-04-2022)
  */
 public class Lorry implements Runnable{
 
@@ -25,6 +25,7 @@ public class Lorry implements Runnable{
     private int actualLoad;
     /** Loading time of one block*/
     private final int LOADING_TIME = 10;
+    /** if block can be loaded into the lorry*/
     private boolean active;
 
     /**
@@ -45,7 +46,10 @@ public class Lorry implements Runnable{
     }
 
     /**
-     *
+     * Method of loading lorry
+     * @param lorrys array of all lorrys
+     * @param lorryThreads array of all lorry threads
+     * @param worker worker who loads the lorry
      */
     public synchronized void loadLorry(Lorry[] lorrys, Thread[] lorryThreads, Worker worker){
         if(active){
@@ -59,14 +63,15 @@ public class Lorry implements Runnable{
                 }
             }else{
                 Thread lorryThread = new Thread(this);
-                lorryThreads[number] = lorryThread;
+                lorryThreads[number - 1] = lorryThread;
                 lorryThread.start();
                 active = false;
-                number++;
-                lorrys[number].loadLorry(lorrys, lorryThreads, worker);
+                lorrys[number] = new Lorry(farmer.getParameters().getCapLorry(), farmer.getParameters().gettLorry(), farmer);
+                farmer.setActualLorry(lorrys[number -1]);
+                lorrys[number - 1].loadLorry(lorrys, lorryThreads, worker);
             }
         }else{
-            lorrys[number].loadLorry(lorrys, lorryThreads, worker);
+            lorrys[number - 1].loadLorry(lorrys, lorryThreads, worker);
         }
 
     }
@@ -130,30 +135,6 @@ public class Lorry implements Runnable{
     }
 
     /**
-     * Getter of capacity of lorry
-     * @return capacity of lorry
-     */
-    public int getCapLorry() {
-        return capLorry;
-    }
-
-    /**
-     * Getter of loading time
-     * @return loading time of one block
-     */
-    public int getLOADING_TIME() {
-        return LOADING_TIME;
-    }
-
-    /**
-     * setter of actual load
-     * @param actualLoad
-     */
-    public void setActualLoad(int actualLoad) {
-        this.actualLoad = actualLoad;
-    }
-
-    /**
      * Getter of number of lorrys
      * @return number of lorry
      */
@@ -161,10 +142,10 @@ public class Lorry implements Runnable{
         return number;
     }
 
-    public static void setNumber(int number) {
-        Lorry.number = number;
-    }
-
+    /**
+     * Text representation of lorry
+     * @return text representation
+     */
     @Override
     public String toString() {
         return name;
